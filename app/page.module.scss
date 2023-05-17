@@ -1,34 +1,54 @@
-.heroMessage {
-  padding: 1rem;
-  color: white;
-  z-index: 10;
-}
+@import './variables.module.scss';
 
 .heroSection {
   background-color: #121921;
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
-  height: 100vh;
+  max-height: 100vh;
   width: 100%;
-}
 
-.heroButton {
-  background-color: white;
-  padding: 1rem;
-  display: inline-block;
-}
+  .heroMessageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
 
-.heroImage {
-  object-fit: contain;
-}
+    .heroMessage {
+      padding: 1rem;
+      color: white;
+      z-index: 10;
+    }
+  }
 
-.heroImageContainer {
-  position: relative;
-  flex: 1;
-}
+  .heroButton {
+    background-color: white;
+    padding: 1rem;
+    display: inline-block;
+  }
 
-.heroMessageContainer {
-  position: relative;
-  padding: 0;
+  @media screen and (min-width: $sm) {
+    padding-left: 3rem;
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (min-width: $sm) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (min-width: $lg) {
+    h1 {
+      font-size: 5rem;
+    }
+  }
+
+  .heroImage {
+    max-width: 50%;
+    height: auto;
+    margin-top: 1rem;
+    object-fit: scale-down;
+  }
 }

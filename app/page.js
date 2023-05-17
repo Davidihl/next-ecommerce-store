@@ -15,13 +15,11 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className={styles.heroImageContainer}>
-          <Image
-            src={heroImage}
-            className={styles.heroImage}
-            alt="Picture of the author"
-          />
-        </div>
+        <Image
+          src={heroImage}
+          className={styles.heroImage}
+          alt="Picture of the author"
+        />
       </section>
       <div>
         <div>New Arrival</div>
