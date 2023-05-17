@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import heroImage from '../public/images/hero.png';
+import heroImage from '../public/images/hero_hd.png';
 import styles from './page.module.scss';
 
 export default function Home() {
@@ -9,7 +9,9 @@ export default function Home() {
       <section className={styles.heroSection}>
         <div className={styles.heroMessageContainer}>
           <div className={styles.heroMessage}>
-            <h1>Pulse. Redefining Sound Excellence.</h1>
+            <h1>
+              Pulse. <br /> Redefining Sound Excellence.
+            </h1>
             <Link className={styles.heroButton} href="/#">
               Shop Now
             </Link>
@@ -18,7 +20,7 @@ export default function Home() {
         <Image
           src={heroImage}
           className={styles.heroImage}
-          alt="Picture of the author"
+          alt="Man wearing Pulse Headphones"
         />
       </section>
       <div>

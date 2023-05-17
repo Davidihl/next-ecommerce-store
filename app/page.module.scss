@@ -1,22 +1,53 @@
-@import './variables.module.scss';
+@import './variables.module';
 
 .heroSection {
   background-color: #121921;
   display: flex;
   justify-content: space-between;
-  max-height: 100vh;
   width: 100%;
+  min-height: 100%;
 
   .heroMessageContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 50%;
+    position: relative;
 
     .heroMessage {
       padding: 1rem;
       color: white;
-      z-index: 10;
+
+      @media screen and (max-width: 400px) {
+        position: absolute;
+        z-index: 10;
+        padding-left: 1rem;
+        padding-top: 0;
+      }
+
+      @media screen and (min-width: $sm) {
+        padding-left: 3rem;
+      }
+
+      @media screen and (min-width: $lg) {
+        padding-left: 4rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+
+        @media screen and (max-width: $sm) {
+          font-size: 1.75rem;
+        }
+
+        @media screen and (min-width: $sm) {
+          font-size: 3rem;
+        }
+
+        @media screen and (min-width: $lg) {
+          font-size: 5rem;
+        }
+      }
     }
   }
 
@@ -24,24 +55,9 @@
     background-color: white;
     padding: 1rem;
     display: inline-block;
-  }
 
-  @media screen and (min-width: $sm) {
-    padding-left: 3rem;
-    h1 {
-      font-size: 3rem;
-    }
-  }
-
-  @media screen and (min-width: $sm) {
-    h1 {
-      font-size: 3rem;
-    }
-  }
-
-  @media screen and (min-width: $lg) {
-    h1 {
-      font-size: 5rem;
+    @media screen and (max-width: 360px) {
+      padding: 0.5rem;
     }
   }
 
@@ -50,5 +66,9 @@
     height: auto;
     margin-top: 1rem;
     object-fit: scale-down;
+
+    @media screen and (max-width: $sm) {
+      width: 100%;
+    }
   }
 }
