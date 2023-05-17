@@ -131,6 +131,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
+    padding-top: 2rem;
 
     @media screen and (min-width: $sm) {
       grid-template-columns: 1fr 1fr;
