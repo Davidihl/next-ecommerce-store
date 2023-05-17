@@ -4,9 +4,11 @@ import styles from './Navigation.module.scss';
 export default function Navigation() {
   return (
     <nav className={styles.navigation}>
-      <Link href="/">Home</Link>
-      <Link href="/products">Products</Link>
-      <Link href="/cart">Cart</Link>
+      <Link href="/">PULSE</Link>
+      <div className={styles.menu}>
+        <Link href="/products">Products</Link>
+        <Link href="/cart">Cart</Link>
+      </div>
     </nav>
   );
 }

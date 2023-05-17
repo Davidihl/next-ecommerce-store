@@ -1,4 +1,9 @@
 .navigation {
   display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+}
+.menu {
+  display: flex;
   gap: 1rem;
 }

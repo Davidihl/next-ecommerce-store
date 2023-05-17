@@ -1,0 +1,34 @@
+.heroMessage {
+  padding: 1rem;
+  color: white;
+  z-index: 10;
+}
+
+.heroSection {
+  background-color: #121921;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+}
+
+.heroButton {
+  background-color: white;
+  padding: 1rem;
+  display: inline-block;
+}
+
+.heroImage {
+  object-fit: contain;
+}
+
+.heroImageContainer {
+  position: relative;
+  flex: 1;
+}
+
+.heroMessageContainer {
+  position: relative;
+  padding: 0;
+}

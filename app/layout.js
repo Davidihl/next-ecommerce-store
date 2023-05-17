@@ -1,9 +1,8 @@
 import './globals.scss';
+import { Heebo } from 'next/font/google';
 import Navigation from './Navigation';
 
-// import { Inter } from 'next/font/google';
-
-// const inter = Inter({ subsets: ['latin'] }); => className={inter.className}
+const heebo = Heebo({ subsets: ['latin'] });
 
 export const metadata = {
   title: { default: 'Next Example | UpLeveled', template: '%s | UpLeveled' },
@@ -13,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={heebo.className}>
         <Navigation />
         {children}
       </body>
