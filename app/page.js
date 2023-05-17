@@ -23,13 +23,27 @@ export default function Home() {
           alt="Man wearing Pulse Headphones"
         />
       </section>
-      <div>
-        <div>New Arrival</div>
-        <div>
-          <div>Image</div>
-          <div>Text</div>
+      <section className={styles.newArrival}>
+        <h2>New Arrivals</h2>
+        <div className={styles.productList}>
+          <div>
+            <div>Image</div>
+            <div>Text</div>
+          </div>
+          <div>
+            <div>Image</div>
+            <div>Text</div>
+          </div>
+          <div>
+            <div>Image</div>
+            <div>Text</div>
+          </div>
+          <div>
+            <div>Image</div>
+            <div>Text</div>
+          </div>
         </div>
-      </div>
+      </section>
       <h2>About PULSE</h2>
       <div>
         At Pulse, our brand values are at the heart of everything we do. They
