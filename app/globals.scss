@@ -15,6 +15,15 @@ h1 {
   padding: 1rem 0;
 }
 
+.topMessage {
+  background-color: #121921;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.75rem 0;
+  font-weight: 100;
+}
+
 @media screen and (max-width: 360px) {
   body {
     min-width: 320px;

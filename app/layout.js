@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={heebo.className}>
+        <div className="topMessage">Free shipping worldwide!</div>
         <Navigation />
         {children}
       </body>

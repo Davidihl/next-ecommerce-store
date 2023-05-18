@@ -44,12 +44,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <h2>About PULSE</h2>
-      <div>
-        At Pulse, our brand values are at the heart of everything we do. They
-        guide us in creating exceptional audio products and delivering an
-        unparalleled experience to our customers.
-      </div>
+      <section className={styles.about}>
+        <h2>About PULSE</h2>
+        <p>
+          At Pulse, our brand values are at the heart of everything we do. They
+          guide us in creating exceptional audio products and delivering an
+          unparalleled experience to our customers.
+        </p>
+      </section>
     </>
   );
 }
