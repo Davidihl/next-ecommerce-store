@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import heroImage from '../public/images/hero_hd.png';
+import ProductList from './components/ProductList';
 import styles from './page.module.scss';
+import getProductsByNew from './utility/getProductsByNew';
 
 export default function Home() {
   return (
@@ -12,7 +14,7 @@ export default function Home() {
             <h1>
               Pulse. <br /> Redefining Sound Excellence.
             </h1>
-            <Link className={styles.heroButton} href="/#">
+            <Link className={styles.heroButton} href="/products">
               Shop Now
             </Link>
           </div>
@@ -26,22 +28,7 @@ export default function Home() {
       <section className={styles.newArrival}>
         <h2>New Arrivals</h2>
         <div className={styles.productList}>
-          <div>
-            <div>Image</div>
-            <div>Text</div>
-          </div>
-          <div>
-            <div>Image</div>
-            <div>Text</div>
-          </div>
-          <div>
-            <div>Image</div>
-            <div>Text</div>
-          </div>
-          <div>
-            <div>Image</div>
-            <div>Text</div>
-          </div>
+          <ProductList filter={getProductsByNew} />
         </div>
       </section>
       <section className={styles.about}>

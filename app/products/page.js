@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { products } from '../../database/productDb';
+import ProductList from '../components/ProductList';
 
 export const metadata = {
   title: 'Animals page',
@@ -8,16 +9,9 @@ export const metadata = {
 
 export default function ProductsPage() {
   return (
-    <main>
+    <section>
       <h1>ProductList</h1>
-      {products.map((product) => {
-        return (
-          <div key={`animal-div-${product.id}`}>
-            <Link href={`/products/${product.name}`}>{product.name}</Link>
-            <div>{product.price}</div>
-          </div>
-        );
-      })}
-    </main>
+      <ProductList />
+    </section>
   );
 }

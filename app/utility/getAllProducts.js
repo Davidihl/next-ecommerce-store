@@ -1,5 +1,5 @@
-import products from '../../database/productDb';
+import { products } from '../../database/productDb';
 
-export function getAllProducts() {
+export default function getAllProducts() {
   return products;
 }

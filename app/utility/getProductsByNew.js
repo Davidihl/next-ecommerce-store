@@ -1,5 +1,5 @@
-import products from '../../database/productDb';
+import { products } from '../../database/productDb';
 
-export function getProductsByNew() {
+export default function getProductsByNew() {
   return products.filter((product) => product.attributes.new === true);
 }
