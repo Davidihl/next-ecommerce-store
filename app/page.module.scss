@@ -110,10 +110,6 @@
   flex-direction: column;
   padding: 3rem 1rem;
   justify-content: center;
-  @media screen and (min-width: $lg) {
-    padding-left: 15%;
-    padding-right: 15%;
-  }
 
   h2 {
     font-size: 1.75rem;
@@ -123,22 +119,6 @@
 
     @media screen and (min-width: $lg) {
       font-size: 3rem;
-    }
-  }
-
-  .productList {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-    padding-top: 2rem;
-
-    @media screen and (min-width: $sm) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @media screen and (min-width: $md) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 }

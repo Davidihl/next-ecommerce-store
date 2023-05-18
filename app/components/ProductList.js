@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 // import { products } from '../../database/productDb';
 import getAllProducts from '../utility/getAllProducts';
-import getProductsByNew from '../utility/getProductsByNew';
 import styles from './ProductList.module.scss';
 
 function getProducts(filter) {
@@ -15,12 +14,17 @@ function getProducts(filter) {
 
 export default function ProductList(props) {
   const products = getProducts(props.filter);
-  console.log(products);
 
   return (
-    <div>
+    <div className={styles.productList}>
       {products.map((product) => {
-        return <div key={`product-${product.id}`}>{product.name}</div>;
+        return (
+          <Link key={`product-${product.id}`} href={`/products/${product.id}`}>
+            <Image src={product.image} width="300" height="300" />
+            <h3>{product.name}</h3>
+            <p>{product.price} EUR</p>
+          </Link>
+        );
       })}
     </div>
   );
