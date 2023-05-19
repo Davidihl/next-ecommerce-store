@@ -52,22 +52,10 @@
       @media screen and (min-width: $lg) {
         padding-left: 4rem;
       }
+    }
 
-      h1 {
-        font-size: 1.5rem;
-
-        @media screen and (max-width: $sm) {
-          font-size: 1.75rem;
-        }
-
-        @media screen and (min-width: $sm) {
-          font-size: 3rem;
-        }
-
-        @media screen and (min-width: $lg) {
-          font-size: 5rem;
-        }
-      }
+    h1 {
+      font-weight: bold;
     }
   }
 
@@ -110,17 +98,6 @@
   flex-direction: column;
   padding: 3rem 1rem;
   justify-content: center;
-
-  h2 {
-    font-size: 1.75rem;
-    text-align: center;
-    font-weight: 500;
-    padding-bottom: 1rem;
-
-    @media screen and (min-width: $lg) {
-      font-size: 3rem;
-    }
-  }
 }
 
 .about {

@@ -1,4 +1,4 @@
-// @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;700&display=swap');
+@import './variables.module';
 
 * {
   font-family: 'heebo', sans-serif;
@@ -13,6 +13,31 @@ a {
 
 h1 {
   padding: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+
+  @media screen and (max-width: $sm) {
+    font-size: 1.75rem;
+  }
+
+  @media screen and (min-width: $sm) {
+    font-size: 3rem;
+  }
+
+  @media screen and (min-width: $lg) {
+    font-size: 5rem;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: 500;
+  padding-bottom: 1rem;
+
+  @media screen and (min-width: $lg) {
+    font-size: 3rem;
+  }
 }
 
 .topMessage {
