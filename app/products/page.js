@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { products } from '../../database/productDb';
+import { products } from '../../database/products';
 import ProductList from '../components/ProductList';
 
 export const metadata = {

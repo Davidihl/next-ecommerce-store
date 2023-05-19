@@ -65,3 +65,15 @@ export const products = [
     image: '/images/products/pulsego.png',
   },
 ];
+
+export function getAllProducts() {
+  return products;
+}
+
+export function getProductsByNew() {
+  return products.filter((product) => product.attributes.new === true);
+}
+
+export function getProductById(id) {
+  return products.find((product) => product.id === id);
+}

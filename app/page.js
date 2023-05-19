@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import getProductsByNew from '../database/getProductsByNew';
+import { getProductsByNew } from '../database/products';
 import heroImage from '../public/images/hero_hd.png';
 import ProductList from './components/ProductList';
 import styles from './page.module.scss';
@@ -27,9 +27,7 @@ export default function Home() {
       </section>
       <section className={styles.newArrival}>
         <h2>New Arrivals</h2>
-        <div className={styles.productList}>
-          <ProductList filter={getProductsByNew} />
-        </div>
+        <ProductList filter={getProductsByNew} />
       </section>
       <section className={styles.about}>
         <h2>About PULSE</h2>
