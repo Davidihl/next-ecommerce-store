@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import getProductsByNew from '../database/getProductsByNew';
 import heroImage from '../public/images/hero_hd.png';
 import ProductList from './components/ProductList';
 import styles from './page.module.scss';
-import getProductsByNew from './utility/getProductsByNew';
 
 export default function Home() {
   return (

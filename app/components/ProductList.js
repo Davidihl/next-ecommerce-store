@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-// import { products } from '../../database/productDb';
-import getAllProducts from '../utility/getAllProducts';
+import getAllProducts from '../../database/getAllProducts';
 import styles from './ProductList.module.scss';
 
 function getProducts(filter) {
