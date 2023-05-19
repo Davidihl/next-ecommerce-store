@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  min-width: 400px;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -32,7 +36,7 @@ h1 {
 h2 {
   font-size: 1.75rem;
   text-align: center;
-  font-weight: 500;
+  font-weight: 300;
   padding-bottom: 1rem;
 
   @media screen and (min-width: $lg) {
@@ -49,7 +53,7 @@ h2 {
   font-weight: 100;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
   body {
     min-width: 320px;
   }

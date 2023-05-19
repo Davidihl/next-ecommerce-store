@@ -1,0 +1,30 @@
+@import '../../variables.module';
+
+.addToCart {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  @media screen and (min-width: $md) {
+    justify-content: start;
+  }
+}
+
+.quantity {
+  border: 1px solid black;
+  padding: 0.5rem;
+  appearance: textfield;
+  font-size: 1.75rem;
+  font-weight: 300;
+  width: 80px;
+  text-align: center;
+}
+
+.addButton {
+  all: unset;
+  background-color: black;
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 300;
+  padding: 0 1rem;
+}

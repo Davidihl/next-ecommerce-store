@@ -1,0 +1,13 @@
+@import '../variables.module';
+
+.smallImage {
+  @media screen and (min-width: $md) {
+    display: none;
+  }
+}
+
+.bigImage {
+  @media screen and (max-width: $md) {
+    display: none;
+  }
+}
