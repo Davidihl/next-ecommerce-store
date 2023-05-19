@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-// import getAllProducts from '../../database/getAllProducts';
 import { getAllProducts } from '../../database/products';
 import styles from './ProductList.module.scss';
 
