@@ -13,13 +13,14 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.62.1",
+    "secure-json-parse": "^2.7.0",
     "sharp": "^0.32.1"
   },
   "devDependencies": {
     "@ts-safeql/eslint-plugin": "^1.1.3",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
-    "eslint-config-upleveled": "^4.3.2",
+    "eslint-config-upleveled": "^4.3.5",
     "libpg-query": "^15.0.2",
     "stylelint": "^15.6.2",
     "stylelint-config-upleveled": "^1.0.2",

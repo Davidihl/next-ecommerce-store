@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { getProductById } from '../../../database/products';
 import ProductImage from '../../components/ProductImage';
 import AddToCart from './AddToCart';
