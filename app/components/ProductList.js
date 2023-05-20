@@ -32,7 +32,7 @@ export default function ProductList(props) {
             <h3>{product.name}</h3>
             <p>
               <span data-test-id="product-price">{product.price}</span>
-              <span>EUR</span>
+              <span> EUR</span>
             </p>
           </Link>
         );

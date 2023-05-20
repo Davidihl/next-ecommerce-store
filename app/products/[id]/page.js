@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
 import ProductImage from '../../components/ProductImage';
 import AddToCart from './AddToCart';
@@ -7,6 +8,10 @@ export const dynamic = 'force-dynamic';
 
 export default function ProductPage({ params }) {
   const product = getProductById(Number(params.id));
+
+  if (!product) {
+    notFound();
+  }
 
   return (
     <main className={styles.wrapper}>
@@ -18,9 +23,9 @@ export default function ProductPage({ params }) {
           <p>{product.attributes.description}</p>
           <p className={styles.price}>
             <span data-test-id="product-price">{product.price}</span>
-            <span>EUR</span>
+            <span> EUR</span>
           </p>
-          <AddToCart />
+          <AddToCart id={product.id} />
         </div>
       </div>
     </main>

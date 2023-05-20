@@ -1,10 +1,13 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import stayPositive from '../../utility/stayPositive';
+import { updateCart } from './actions';
 import styles from './AddToCart.module.scss';
 
-export default function AddToCart() {
+export default function AddToCart({ id }) {
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
 
   return (
     <form className={styles.addToCart}>
@@ -18,7 +21,14 @@ export default function AddToCart() {
           setQuantity(stayPositive(event.currentTarget.value))
         }
       />
-      <button data-test-id="product-add-to-cart" className={styles.addButton}>
+      <button
+        data-test-id="product-add-to-cart"
+        className={styles.addButton}
+        formAction={async () => {
+          router.refresh();
+          await updateCart(id, quantity);
+        }}
+      >
         Add to cart
       </button>
     </form>
