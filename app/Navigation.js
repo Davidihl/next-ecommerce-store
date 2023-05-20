@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import cart from '../public/cart.svg';
 import logo from '../public/Pulse_logo.svg';
-import Badge from './components/Badge';
+import CartIcon from './components/CartIcon';
 import styles from './Navigation.module.scss';
 
 export default function Navigation() {
@@ -15,10 +14,7 @@ export default function Navigation() {
         <Link href="/products" data-test-id="products-link">
           Catalog
         </Link>
-        <Link href="/cart" className="cart">
-          <Badge value={1} />
-          <Image src={cart} alt="Cart Icon" />
-        </Link>
+        <CartIcon value={0} />
       </div>
     </nav>
   );
