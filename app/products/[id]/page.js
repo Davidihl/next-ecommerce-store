@@ -16,7 +16,10 @@ export default function ProductPage({ params }) {
         <div className={styles.description}>
           <h2>Description</h2>
           <p>{product.attributes.description}</p>
-          <p className={styles.price}>{product.price} EUR</p>
+          <p className={styles.price}>
+            <span data-test-id="product-price">{product.price}</span>
+            <span>EUR</span>
+          </p>
           <AddToCart />
         </div>
       </div>

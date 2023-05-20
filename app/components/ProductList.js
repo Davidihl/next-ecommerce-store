@@ -18,10 +18,22 @@ export default function ProductList(props) {
     <div className={styles.productList}>
       {products.map((product) => {
         return (
-          <Link key={`product-${product.id}`} href={`/products/${product.id}`}>
-            <Image src={product.image} width="300" height="300" />
+          <Link
+            key={`product-${product.id}`}
+            href={`/products/${product.id}`}
+            data-test-id={`product-${product.id}`}
+          >
+            <Image
+              src={product.image}
+              width="300"
+              height="300"
+              alt={product.alt}
+            />
             <h3>{product.name}</h3>
-            <p>{product.price} EUR</p>
+            <p>
+              <span data-test-id="product-price">{product.price}</span>
+              <span>EUR</span>
+            </p>
           </Link>
         );
       })}

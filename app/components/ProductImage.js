@@ -7,7 +7,8 @@ export default function ProductImage(props) {
       <div className={styles.smallImage}>
         <Image
           src={props.product.image}
-          alt={props.product.name}
+          alt={props.product.alt}
+          data-test-id="product-image"
           width={300}
           height={300}
         />
@@ -15,7 +16,8 @@ export default function ProductImage(props) {
       <div className={styles.bigImage}>
         <Image
           src={props.product.image}
-          alt={props.product.name}
+          alt={props.product.alt}
+          data-test-id="product-image"
           width={400}
           height={400}
         />

@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import stayPositive from '../../utility/stayPositive';
 import styles from './AddToCart.module.scss';
 
 export default function AddToCart() {
@@ -11,9 +12,15 @@ export default function AddToCart() {
         value={quantity}
         type="number"
         className={styles.quantity}
-        onChange={(event) => setQuantity(event.currentTarget.value)}
+        min="1"
+        data-test-id="product-quantity"
+        onChange={(event) =>
+          setQuantity(stayPositive(event.currentTarget.value))
+        }
       />
-      <button className={styles.addButton}>Add to cart</button>
+      <button data-test-id="product-add-to-cart" className={styles.addButton}>
+        Add to cart
+      </button>
     </form>
   );
 }
