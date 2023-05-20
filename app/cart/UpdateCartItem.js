@@ -1,19 +1,17 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import stayPositive from '../utility/stayPositive';
-import { updateCart } from './actions';
+import { removeItem } from './actions';
 
-export default function UpdateCartItem({ id, quantity }) {
+export default function UpdateCartItem({ id }) {
   const router = useRouter();
 
   return (
     <form>
       <button
-        data-test-id="product-add-to-cart"
+        data-test-id={`cart-product-remove-${id}`}
         formAction={async () => {
           router.refresh();
-          await updateCart(id, quantity);
+          await removeItem(id);
         }}
       >
         remove
