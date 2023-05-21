@@ -12,7 +12,7 @@ export default function CartIcon() {
   const cartItemAmount = cartAmount(cart);
 
   return (
-    <Link href="/cart" className="cart">
+    <Link href="/cart" className="cart" data-test-id="cart-link">
       <Badge value={cartItemAmount} />
       <Image src={cartIcon} alt="Cart Icon" />
     </Link>
