@@ -6,7 +6,7 @@ import CartItem from './CartItem';
 import { getTotalCartValue } from './utility/getTotalCartValue';
 
 export default function Cart() {
-  const cartCookie = getCookie('yourCart'); // Get cookie from client as string
+  const cartCookie = getCookie('cart'); // Get cookie from client as string
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
   const totalValue = getTotalCartValue(cart);
 

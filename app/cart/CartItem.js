@@ -9,7 +9,7 @@ export default function CartItem({ item, key }) {
 
   return (
     <div
-      key={`cartItem-div-${productInCart.id}`}
+      key={`cartItem-div-${key}`}
       data-test-id={`cart-product-${productInCart.id}`}
       className={styles.cartItemWrapper}
     >

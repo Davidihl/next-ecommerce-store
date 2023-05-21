@@ -4,7 +4,7 @@ import { checkCookie } from '../../utility/checkCookie';
 import { getCookie } from '../../utility/cookie';
 
 export async function updateCart(id, quantity) {
-  const cartCookie = getCookie('yourCart'); // Get cookie from client as string
+  const cartCookie = getCookie('cart'); // Get cookie from client as string
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
 
   // Find item in cart, if it doesnt exist -> return undefined
@@ -19,5 +19,5 @@ export async function updateCart(id, quantity) {
     cart.push({ id, quantity }); // If item don't exists, add it to cart
   }
 
-  await cookies().set('yourCart', JSON.stringify(cart));
+  await cookies().set('cart', JSON.stringify(cart));
 }
