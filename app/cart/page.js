@@ -1,8 +1,8 @@
 import Cart from './Cart';
 
 export const metadata = {
-  title: 'Animals page',
-  description: 'My favorite animals',
+  title: 'Cart',
+  description: 'This is your cart',
 };
 
 export default function CartPage() {

@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Animals page',
-  description: 'My favorite animals',
+  title: 'Checkout',
+  description: 'Checkout your cart with PULSE products',
 };
 
 export default function CheckoutPage() {

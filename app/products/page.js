@@ -1,8 +1,8 @@
 import ProductList from '../components/ProductList';
 
 export const metadata = {
-  title: 'Animals page',
-  description: 'My favorite animals',
+  title: 'Product Overview',
+  description: 'Explore the products of PULSE',
 };
 
 export default function ProductsPage() {
