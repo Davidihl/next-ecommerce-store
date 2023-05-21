@@ -24,7 +24,8 @@
     text-align: right;
 
     &:after {
-      content: ' EUR';
+      content: 'EUR';
+      gap: 0.25rem;
     }
   }
 

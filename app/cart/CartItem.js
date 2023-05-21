@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getProductById } from '../../database/products';
+import { capitalizeFirstLetter } from '../utility/capitalizeFirstLetter';
 import styles from './CartItem.module.scss';
 import DeleteCartItem from './DeleteCartItem';
 import UpdateQuantity from './UpdateQuantity';
@@ -17,7 +18,7 @@ export default function CartItem({ item, key }) {
       <Image src={cartItem.image} alt={cartItem.alt} width="100" height="100" />
       <div className={styles.product}>
         <h2>{cartItem.name}</h2>
-        <div>{cartItem.price}</div>
+        <p>{capitalizeFirstLetter(cartItem.category)}</p>
       </div>
       <div className={styles.quantity}>
         <UpdateQuantity id={cartItem.id} quantity={item.quantity} />
