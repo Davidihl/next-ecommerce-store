@@ -8,7 +8,6 @@ export const dynamic = 'force-dynamic';
 
 export function generateMetadata({ params }) {
   const product = getProductById(Number(params.id));
-
   return {
     title: product.name,
     description: product.attributes.description,

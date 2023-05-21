@@ -1,5 +1,27 @@
 @import '../variables.module';
 
-.cartItemWrapper {
-  display: block;
+.cartWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 800px;
+}
+
+.tableHeader {
+  display: flex;
+
+  .product {
+    flex: 1;
+  }
+
+  .quantity {
+    width: 5rem;
+    background-color: red;
+  }
+
+  .total {
+    width: 5rem;
+    margin-right: 1.5rem;
+    background-color: red;
+  }
 }

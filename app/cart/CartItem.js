@@ -1,31 +1,31 @@
 import Image from 'next/image';
 import { getProductById } from '../../database/products';
 import styles from './CartItem.module.scss';
-import UpdateCartItem from './UpdateCartItem';
+import DeleteCartItem from './DeleteCartItem';
+import UpdateQuantity from './UpdateQuantity';
 import { getSubTotal } from './utility/getSubtotal';
 
 export default function CartItem({ item, key }) {
-  const productInCart = getProductById(item.id);
+  const cartItem = getProductById(item.id);
 
   return (
     <div
-      key={`cartItem-div-${key}`}
-      data-test-id={`cart-product-${productInCart.id}`}
+      data-test-id={`cart-product-${cartItem.id}`}
       className={styles.cartItemWrapper}
     >
-      <Image
-        src={productInCart.image}
-        alt={productInCart.alt}
-        width="100"
-        height="100"
-      />
-      <h2>{productInCart.name}</h2>
-      <div data-test-id={`cart-product-quantity-${item.id}`}>
-        {item.quantity}
+      {JSON.stringify(key)}
+      <Image src={cartItem.image} alt={cartItem.alt} width="100" height="100" />
+      <div className={styles.product}>
+        <h2>{cartItem.name}</h2>
+        <div>{cartItem.price}</div>
       </div>
-      <div>{productInCart.price}</div>
-      <div>{getSubTotal(productInCart.id, item.quantity)}</div>
-      <UpdateCartItem id={item.id} />
+      <div className={styles.quantity}>
+        <UpdateQuantity id={cartItem.id} quantity={item.quantity} />
+      </div>
+      <div className={styles.total}>
+        {getSubTotal(cartItem.id, item.quantity)}
+      </div>
+      <DeleteCartItem id={item.id} />
     </div>
   );
 }

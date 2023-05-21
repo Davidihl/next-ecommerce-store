@@ -1,0 +1,34 @@
+.cartItemWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .product {
+    flex: 1;
+  }
+
+  .quantity {
+    display: flex;
+    width: 5rem;
+    height: 2rem;
+  }
+
+  .total {
+    width: 6rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    text-align: right;
+
+    &:after {
+      content: ' EUR';
+    }
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    text-align: left;
+    padding: 0;
+  }
+}

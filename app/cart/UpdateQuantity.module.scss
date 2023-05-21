@@ -1,0 +1,38 @@
+.updateQuantity {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.decrease {
+  all: unset;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: rgb(229, 229, 229);
+  }
+}
+
+.increase {
+  all: unset;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: rgb(229, 229, 229);
+  }
+}
+
+.quantity {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  min-width: 2rem;
+  justify-content: center;
+}

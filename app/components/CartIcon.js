@@ -7,7 +7,7 @@ import { getCookie } from '../utility/cookie';
 import Badge from './Badge';
 
 export default function CartIcon() {
-  const cartCookie = getCookie('yourCart'); // Get cookie from client as string
+  const cartCookie = getCookie('cart'); // Get cookie from client as string
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
   const cartItemAmount = cartAmount(cart);
 

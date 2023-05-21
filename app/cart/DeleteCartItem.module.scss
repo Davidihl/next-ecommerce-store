@@ -1,0 +1,16 @@
+.removeButton {
+  all: unset;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  padding: 0.25rem;
+
+  &:hover {
+    background-color: rgb(229, 229, 229);
+  }
+}
+
+.wrapper {
+  height: 2rem;
+}
