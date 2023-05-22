@@ -24,7 +24,11 @@ export default function Cart() {
           <CartItem item={cartItem} />
         </Fragment>
       ))}
-      <div data-test-id="cart-total">{totalValue}</div>
+      <div data-test-id="cart-total" className={styles.totalSumContainer}>
+        <span className={styles.totalSumText}>Total:</span>
+        <span className={styles.totalSumValue}>{totalValue}</span>
+        <span className={styles.totalSumCurrency}>EUR</span>
+      </div>
       <Link data-test-id="cart-checkout" href="/checkout">
         Checkout
       </Link>

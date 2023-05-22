@@ -10,7 +10,7 @@ export function generateMetadata({ params }) {
   const product = getProductById(Number(params.id));
   return {
     title: product.name,
-    description: product.attributes.description,
+    description: product.description,
   };
 }
 
@@ -28,7 +28,7 @@ export default function ProductPage({ params }) {
         <ProductImage product={product} />
         <div className={styles.description}>
           <h2>Description</h2>
-          <p>{product.attributes.description}</p>
+          <p>{product.description}</p>
           <p className={styles.price}>
             <span data-test-id="product-price">{product.price}</span>
             <span> EUR</span>
