@@ -6,7 +6,7 @@ import DeleteCartItem from './DeleteCartItem';
 import UpdateQuantity from './UpdateQuantity';
 import { getSubTotal } from './utility/getSubtotal';
 
-export default function CartItem({ item, key }) {
+export default function CartItem({ item }) {
   const cartItem = getProductById(item.id);
 
   return (
@@ -14,11 +14,17 @@ export default function CartItem({ item, key }) {
       data-test-id={`cart-product-${cartItem.id}`}
       className={styles.cartItemWrapper}
     >
-      {JSON.stringify(key)}
-      <Image src={cartItem.image} alt={cartItem.alt} width="100" height="100" />
-      <div className={styles.product}>
-        <h2>{cartItem.name}</h2>
-        <p>{capitalizeFirstLetter(cartItem.category)}</p>
+      <div className={styles.pictureWrapper}>
+        <Image
+          src={cartItem.image}
+          alt={cartItem.alt}
+          width="100"
+          height="100"
+        />
+        <div className={styles.product}>
+          <h2>{cartItem.name}</h2>
+          <p>{capitalizeFirstLetter(cartItem.category)}</p>
+        </div>
       </div>
       <div className={styles.quantity}>
         <UpdateQuantity id={cartItem.id} quantity={item.quantity} />

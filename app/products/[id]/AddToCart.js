@@ -18,7 +18,7 @@ export default function AddToCart({ id }) {
         min="1"
         data-test-id="product-quantity"
         onChange={(event) =>
-          setQuantity(stayPositive(event.currentTarget.value))
+          setQuantity(Number(stayPositive(event.currentTarget.value)))
         }
       />
       <button

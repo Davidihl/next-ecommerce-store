@@ -1,9 +1,21 @@
+@import '../variables.module';
+
 .cartItemWrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
   border-bottom: 1px solid black;
   padding: 1rem 0;
+
+  .pictureWrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    flex: 1;
+
+    @media screen and (min-width: $sm) {
+      flex-direction: row;
+    }
+  }
 
   .product {
     flex: 1;
@@ -26,11 +38,16 @@
     align-items: center;
     justify-content: end;
     text-align: right;
+    font-weight: 100;
   }
 
   h2 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-align: left;
     padding: 0;
+
+    @media screen and (min-width: $sm) {
+      font-size: 1.25rem;
+    }
   }
 }
