@@ -3,7 +3,7 @@
 .cartWrapper {
   position: relative;
 
-  @media screen and (pointer: coarse) and (min-width: $sm) {
+  @media screen and (min-width: $sm) {
     &:hover .hoverCart {
       display: block;
     }
