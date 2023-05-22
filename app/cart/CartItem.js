@@ -24,7 +24,8 @@ export default function CartItem({ item, key }) {
         <UpdateQuantity id={cartItem.id} quantity={item.quantity} />
       </div>
       <div className={styles.total}>
-        {getSubTotal(cartItem.id, item.quantity)}
+        <span>{getSubTotal(cartItem.id, item.quantity)}</span>
+        <span>&nbsp;EUR</span>
       </div>
       <DeleteCartItem id={item.id} />
     </div>

@@ -18,19 +18,27 @@
 
 .tableHeader {
   display: flex;
+  font-weight: 100;
+  font-size: 0.75rem;
+  gap: 1rem;
 
   .product {
     flex: 1;
+
+    @media screen and (min-width: $sm) {
+      margin-left: 7.25rem;
+    }
   }
 
   .quantity {
     width: 5rem;
-    background-color: red;
+    text-align: center;
   }
 
   .total {
     width: 5rem;
     margin-right: 1.5rem;
-    background-color: red;
+    text-align: right;
+    margin-right: 3rem;
   }
 }

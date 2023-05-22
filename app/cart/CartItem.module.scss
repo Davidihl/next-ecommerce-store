@@ -7,6 +7,10 @@
 
   .product {
     flex: 1;
+
+    p {
+      font-weight: 100;
+    }
   }
 
   .quantity {
@@ -22,11 +26,6 @@
     align-items: center;
     justify-content: end;
     text-align: right;
-
-    &:after {
-      content: 'EUR';
-      gap: 0.25rem;
-    }
   }
 
   h2 {
