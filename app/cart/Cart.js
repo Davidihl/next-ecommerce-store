@@ -12,13 +12,7 @@ export default function Cart() {
   const totalValue = getTotalCartValue(cart);
 
   return (
-    <main className={styles.cartWrapper}>
-      <h1>Your Cart</h1>
-      <div className={styles.tableHeader}>
-        <div className={styles.product}>Item</div>
-        <div className={styles.quantity}>Quantity</div>
-        <div className={styles.total}>Total</div>
-      </div>
+    <>
       {cart.map((cartItem) => (
         <Fragment key={`cartItem-div-${cartItem.id}`}>
           <CartItem item={cartItem} />
@@ -29,9 +23,6 @@ export default function Cart() {
         <span className={styles.totalSumValue}>{totalValue}</span>
         <span className={styles.totalSumCurrency}>EUR</span>
       </div>
-      <Link data-test-id="cart-checkout" href="/checkout">
-        Checkout
-      </Link>
-    </main>
+    </>
   );
 }

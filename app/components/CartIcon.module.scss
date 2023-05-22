@@ -1,0 +1,66 @@
+@import '../variables.module';
+
+.cartWrapper {
+  position: relative;
+
+  @media screen and (min-width: $sm) {
+    &:hover .hoverCart {
+      display: block;
+    }
+  }
+}
+
+.hoverCart {
+  display: none;
+  position: absolute;
+
+  right: 0;
+
+  &:hover {
+    display: block; // Keep the dropdown visible while hovering over it
+  }
+}
+
+.cart {
+  padding: 1rem;
+  background-color: white;
+  margin-top: 2rem;
+
+  h2 {
+    text-align: right;
+  }
+
+  .itemWrapper {
+    max-height: 50vh;
+    overflow: auto;
+  }
+}
+
+.tableHeader {
+  display: flex;
+  font-weight: 100;
+  font-size: 0.75rem;
+  gap: 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.25rem;
+
+  .product {
+    flex: 1;
+
+    @media screen and (min-width: $sm) {
+      padding-left: 6.25rem;
+    }
+  }
+
+  .quantity {
+    width: 5rem;
+    text-align: center;
+  }
+
+  .total {
+    width: 5rem;
+    text-align: right;
+    margin-right: 3rem;
+  }
+}

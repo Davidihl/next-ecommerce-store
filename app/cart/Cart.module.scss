@@ -1,52 +1,5 @@
 @import '../variables.module';
 
-.cartWrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-
-  h1 {
-    font-size: 3rem;
-    font-weight: 100;
-  }
-
-  @media screen and (min-width: $sm) {
-    padding-left: 15%;
-    padding-right: 15%;
-  }
-
-  @media screen and (min-width: $md) {
-    padding-left: 20%;
-    padding-right: 20%;
-  }
-}
-
-.tableHeader {
-  display: flex;
-  font-weight: 100;
-  font-size: 0.75rem;
-  gap: 1rem;
-
-  .product {
-    flex: 1;
-
-    @media screen and (min-width: $sm) {
-      margin-left: 6.25rem;
-    }
-  }
-
-  .quantity {
-    width: 5rem;
-    text-align: center;
-  }
-
-  .total {
-    width: 5rem;
-    text-align: right;
-    margin-right: 3rem;
-  }
-}
-
 .totalSumContainer {
   width: 100%;
   display: flex;
@@ -66,10 +19,4 @@
 .totalSumText {
   font-size: 1rem;
   line-height: 2rem;
-}
-
-.checkoutButton {
-  background-color: black;
-  color: white;
-  padding: 1rem;
 }

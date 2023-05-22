@@ -67,7 +67,7 @@ export function getAllProducts() {
 }
 
 export function getProductsByNew() {
-  return products.filter((product) => product.attributes.new === true);
+  return products.filter((product) => product.new === true);
 }
 
 export function getProductById(id) {
