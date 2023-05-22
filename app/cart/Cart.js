@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Fragment } from 'react';
 import { checkCookie } from '../utility/checkCookie';
 import { getCookie } from '../utility/cookie';

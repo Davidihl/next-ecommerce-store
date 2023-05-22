@@ -14,7 +14,7 @@ export default function Navigation() {
         <Link href="/products" data-test-id="products-link">
           Catalog
         </Link>
-        <CartIcon className={styles.cartIcon} />
+        <CartIcon />
       </nav>
     </header>
   );
