@@ -45,7 +45,7 @@ export default function CheckoutForm() {
           <input data-test-id="checkout-security-code" />
         </label>
       </div>
-      <button>Confirm</button>
+      <button>Confirm!</button>
     </form>
   );
 }
