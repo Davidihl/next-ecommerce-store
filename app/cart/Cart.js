@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { checkCookie } from '../utility/checkCookie';
 import { getCookie } from '../utility/cookie';
+import { getTotalCartValue } from '../utility/getTotalCartValue';
 import styles from './Cart.module.scss';
 import CartItem from './CartItem';
-import { getTotalCartValue } from './utility/getTotalCartValue';
 
 export default function Cart(props) {
   const cartCookie = getCookie('cart'); // Get cookie from client as string

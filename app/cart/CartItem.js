@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { getProductById } from '../../database/products';
 import { capitalizeFirstLetter } from '../utility/capitalizeFirstLetter';
+import { getSubTotal } from '../utility/getSubtotal';
 import styles from './CartItem.module.scss';
 import DeleteCartItem from './DeleteCartItem';
 import UpdateQuantity from './UpdateQuantity';
-import { getSubTotal } from './utility/getSubtotal';
 
 export default function CartItem({ item, allowChange }) {
   const cartItem = getProductById(item.id);
@@ -22,7 +22,7 @@ export default function CartItem({ item, allowChange }) {
           height="100"
         />
         <div className={styles.product}>
-          <h2>{cartItem.name}</h2>
+          <p className={styles.productName}>{cartItem.name}</p>
           <p>{capitalizeFirstLetter(cartItem.category)}</p>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function CartItem({ item, allowChange }) {
           <UpdateQuantity id={cartItem.id} quantity={item.quantity} />
         </div>
       ) : (
-        ''
+        <div className={styles.quantity}>{item.quantity} x</div>
       )}
       <div className={styles.total}>
         <span>{getSubTotal(cartItem.id, item.quantity)}</span>

@@ -3,8 +3,8 @@ import styles from './Summary.module.scss';
 
 export default function Summary({ item }) {
   return (
-    <main>
+    <div>
       <Cart allowChange={false} />
-    </main>
+    </div>
   );
 }
