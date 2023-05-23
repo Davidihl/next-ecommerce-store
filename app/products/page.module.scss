@@ -1,0 +1,21 @@
+@import '../variables.module';
+
+.productWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+
+  h1 {
+    font-weight: 100;
+    text-align: center;
+
+    @media screen and (max-width: $sm) {
+      font-size: 1.75rem;
+    }
+
+    @media screen and (min-width: $sm) {
+      font-size: 3rem;
+    }
+  }
+}

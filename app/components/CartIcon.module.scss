@@ -7,21 +7,19 @@
     &:hover .hoverCart {
       display: block;
     }
-
-    &:active .hoverCart {
-      display: none;
-      transition-delay: 1s;
-    }
   }
 }
 
 .hoverCart {
   display: none;
   position: absolute;
-  transition: all;
-  transition-delay: 1s;
+  width: 30rem;
 
   right: 0;
+
+  &:hover {
+    display: block; // Keep the dropdown visible while hovering over it
+  }
 }
 
 .cart {
@@ -29,8 +27,19 @@
   background-color: white;
   margin-top: 2rem;
 
-  h2 {
+  .hove.hoverMenuClose {
+    @media screen and (min-width: $sm) {
+      &:active .hoverCart {
+        display: block;
+      }
+    }
+  }
+  .hoverCartHeadline {
     text-align: right;
+  }
+
+  p {
+    font-size: 1rem;
   }
 
   .itemWrapper {

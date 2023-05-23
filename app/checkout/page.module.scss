@@ -1,0 +1,32 @@
+@import '../variables.module';
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.formWrapper {
+  display: flex;
+  gap: 1rem;
+  background-color: aqua;
+  width: 100%;
+}
+
+.form {
+  flex: 1;
+  background-color: grey;
+  padding: 2rem;
+}
+
+.summary {
+  display: none;
+  background-color: greenyellow;
+  flex: 1;
+  padding: 2rem;
+
+  @media screen and (min-width: $sm) {
+    display: block;
+  }
+}

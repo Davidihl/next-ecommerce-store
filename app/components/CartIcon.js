@@ -22,7 +22,7 @@ export default function CartIcon() {
       </Link>
       <div className={styles.hoverCart}>
         <div className={styles.cart}>
-          <h2>Your Cart</h2>
+          <h2 className={styles.hoverCartHeadline}>Your Cart</h2>
           <div className={styles.tableHeader}>
             <div className={styles.product}>Item</div>
             <div className={styles.quantity}>Quantity</div>
@@ -31,7 +31,7 @@ export default function CartIcon() {
           <div className={styles.itemWrapper}>
             <Cart />
           </div>
-          <CheckoutButton />
+          <CheckoutButton className={styles.hoverMenuClose} />
         </div>
       </div>
     </div>

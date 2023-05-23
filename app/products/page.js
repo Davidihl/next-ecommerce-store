@@ -1,4 +1,5 @@
 import ProductList from '../components/ProductList';
+import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Product Overview',
@@ -7,8 +8,8 @@ export const metadata = {
 
 export default function ProductsPage() {
   return (
-    <section>
-      <h1>ProductList</h1>
+    <section className={styles.productWrapper}>
+      <h1>Explore our products</h1>
       <ProductList />
     </section>
   );
