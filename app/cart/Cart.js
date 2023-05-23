@@ -5,7 +5,7 @@ import styles from './Cart.module.scss';
 import CartItem from './CartItem';
 import { getTotalCartValue } from './utility/getTotalCartValue';
 
-export default function Cart() {
+export default function Cart(props) {
   const cartCookie = getCookie('cart'); // Get cookie from client as string
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
   const totalValue = getTotalCartValue(cart);
@@ -14,7 +14,7 @@ export default function Cart() {
     <>
       {cart.map((cartItem) => (
         <Fragment key={`cartItem-div-${cartItem.id}`}>
-          <CartItem item={cartItem} />
+          <CartItem item={cartItem} allowChange={props.allowChange} />
         </Fragment>
       ))}
       <div data-test-id="cart-total" className={styles.totalSumContainer}>

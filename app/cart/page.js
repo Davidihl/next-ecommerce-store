@@ -16,7 +16,7 @@ export default function CartPage() {
         <div className={styles.quantity}>Quantity</div>
         <div className={styles.total}>Total</div>
       </div>
-      <Cart />
+      <Cart allowChange={true} />
       <CheckoutButton />
     </main>
   );

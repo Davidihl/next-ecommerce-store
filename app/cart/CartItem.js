@@ -6,7 +6,7 @@ import DeleteCartItem from './DeleteCartItem';
 import UpdateQuantity from './UpdateQuantity';
 import { getSubTotal } from './utility/getSubtotal';
 
-export default function CartItem({ item }) {
+export default function CartItem({ item, allowChange }) {
   const cartItem = getProductById(item.id);
 
   return (
@@ -26,14 +26,18 @@ export default function CartItem({ item }) {
           <p>{capitalizeFirstLetter(cartItem.category)}</p>
         </div>
       </div>
-      <div className={styles.quantity}>
-        <UpdateQuantity id={cartItem.id} quantity={item.quantity} />
-      </div>
+      {allowChange ? (
+        <div className={styles.quantity}>
+          <UpdateQuantity id={cartItem.id} quantity={item.quantity} />
+        </div>
+      ) : (
+        ''
+      )}
       <div className={styles.total}>
         <span>{getSubTotal(cartItem.id, item.quantity)}</span>
         <span>&nbsp;EUR</span>
       </div>
-      <DeleteCartItem id={item.id} />
+      {allowChange ? <DeleteCartItem id={item.id} /> : ''}
     </div>
   );
 }

@@ -29,7 +29,7 @@ export default function CartIcon() {
             <div className={styles.total}>Total</div>
           </div>
           <div className={styles.itemWrapper}>
-            <Cart />
+            <Cart allowChange={true} />
           </div>
           <CheckoutButton className={styles.hoverMenuClose} />
         </div>
