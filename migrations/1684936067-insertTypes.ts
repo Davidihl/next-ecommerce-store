@@ -1,4 +1,3 @@
-import { unique } from 'next/dist/build/utils.js';
 import { Sql } from 'postgres';
 import { products } from '../database/importProducts.js';
 

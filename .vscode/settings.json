@@ -8,5 +8,12 @@
     "postcss",
     "javascript",
     "typescriptreact"
+  ],
+  "cSpell.words": [
+    "pulsego",
+    "pulselite",
+    "pulsepro",
+    "pulsepure",
+    "pulsesound"
   ]
 }

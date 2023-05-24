@@ -16,10 +16,10 @@ export async function up(sql: Sql) {
   await sql`
     CREATE TABLE products (
       id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-      category integer NOT NULL,
-      type integer NOT NULL,
+      category_id integer NOT NULL REFERENCES categories (id) ON DELETE CASCADE,
+      type_id integer NOT NULL REFERENCES types (id) ON DELETE CASCADE,
       name varchar(30) NOT NULL,
-      price integer NOT NULL,
+      price numeric NOT NULL,
       new boolean NOT NULL,
       description text NOT NULL,
       image varchar(255) NOT NULL,
