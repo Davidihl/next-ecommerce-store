@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { getProductById } from '../../database/products';
+import { getProductById } from '../../database/products.js';
 import { capitalizeFirstLetter } from '../utility/capitalizeFirstLetter';
 import { getSubTotal } from '../utility/getSubtotal';
 import styles from './CartItem.module.scss';

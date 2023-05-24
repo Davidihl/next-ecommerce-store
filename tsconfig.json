@@ -6,7 +6,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "jsx": "preserve"
   },
   "include": [
     "**/.eslintrc.cjs",
@@ -16,6 +17,14 @@
     "**/*.jsx",
     "**/*.cjs",
     "**/*.mjs",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "migrations/1684933744-createTableProducts.ts",
+    "migrations/1684934338-createTableCategories.ts",
+    "migrations/1684934468-createTableTypes.ts",
+    "migrations/1684935087-insertProducts.ts",
+    "migrations/1684933744-createTableProducts.ts",
+    "migrations/1684934338-createTableCategories.ts",
+    "migrations/1684934468-createTableTypes.ts",
+    "migrations/1684935087-insertProducts.ts"
   ]
 }

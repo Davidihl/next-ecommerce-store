@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProductsByNew } from '../database/products';
+import { getProductsByNew } from '../database/products.js';
 import heroImage from '../public/images/hero_hd.png';
 import ProductList from './components/ProductList';
 import styles from './page.module.scss';
