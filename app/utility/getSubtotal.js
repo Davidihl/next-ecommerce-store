@@ -1,4 +1,4 @@
-import { getProductById } from '../../database/products.js';
+import { getProductById } from '../../database/products.ts';
 
 export function getSubTotal(id, quantity) {
   const item = getProductById(id);
