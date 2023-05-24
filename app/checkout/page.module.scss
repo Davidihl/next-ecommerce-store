@@ -37,12 +37,8 @@
 .summary {
   margin: 0 1rem;
   display: none;
-  background-color: rgb(244, 244, 244);
-  flex: 1;
 
-  padding: 1rem;
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  flex: 1;
 
   @media screen and (min-width: $md) {
     max-width: 35vw;
