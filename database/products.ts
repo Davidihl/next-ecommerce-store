@@ -79,21 +79,7 @@ import { Product } from '../migrations/1684957255-createTableProducts';
 import { sql } from './connect';
 
 export const getAllProducts = cache(async () => {
-  const products = await sql<
-    {
-      id: number;
-      name: string;
-      price: number;
-      new: boolean;
-      description: string;
-      image: string;
-      alt: string;
-      categoryId: number;
-      typeId: number;
-      category: string;
-      type: string;
-    }[]
-  >`
+  const products = await sql<Product[]>`
     SELECT
       products.id AS id,
       products.name AS name,
@@ -102,8 +88,6 @@ export const getAllProducts = cache(async () => {
       products.description AS description,
       products.image AS image,
       products.alt AS alt,
-      products.category_id,
-      products.type_id,
       categories.name AS category,
       types.name AS type
     FROM
@@ -122,21 +106,7 @@ export const getAllProducts = cache(async () => {
 });
 
 export const getProductsById = cache(async (id: number) => {
-  const [product] = await sql<
-    {
-      id: number;
-      name: string;
-      price: number;
-      new: boolean;
-      description: string;
-      image: string;
-      alt: string;
-      categoryId: number;
-      typeId: number;
-      category: string;
-      type: string;
-    }[]
-  >`
+  const [product] = await sql<Product[]>`
   SELECT
     products.id AS id,
     products.name AS name,
@@ -145,8 +115,6 @@ export const getProductsById = cache(async (id: number) => {
     products.description AS description,
     products.image AS image,
     products.alt AS alt,
-    products.category_id,
-    products.type_id,
     categories.name AS category,
     types.name AS type
   FROM
@@ -166,21 +134,7 @@ export const getProductsById = cache(async (id: number) => {
 });
 
 export const getProductsByNew = cache(async () => {
-  const [product] = await sql<
-    {
-      id: number;
-      name: string;
-      price: number;
-      new: boolean;
-      description: string;
-      image: string;
-      alt: string;
-      categoryId: number;
-      typeId: number;
-      category: string;
-      type: string;
-    }[]
-  >`
+  const [product] = await sql<Product[]>`
   SELECT
     products.id AS id,
     products.name AS name,
@@ -189,8 +143,6 @@ export const getProductsByNew = cache(async () => {
     products.description AS description,
     products.image AS image,
     products.alt AS alt,
-    products.category_id,
-    products.type_id,
     categories.name AS category,
     types.name AS type
   FROM
