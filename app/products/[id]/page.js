@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getProductById } from '../../../database/products.js';
+import { getProductById } from '../../../database/products.ts';
 import ProductImage from '../../components/ProductImage';
 import AddToCart from './AddToCart';
 import styles from './page.module.scss';

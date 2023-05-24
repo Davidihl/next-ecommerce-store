@@ -11,8 +11,8 @@ function getProducts(filter) {
   }
 }
 
-export default function ProductList(props) {
-  const products = getProducts(props.filter);
+export default async function ProductList(props) {
+  const products = await getProducts(props.filter);
 
   return (
     <div className={styles.productList}>
