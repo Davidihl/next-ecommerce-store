@@ -6,7 +6,9 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "ley-new": "f(){ touch migrations/$(date +%s)-$1.ts; }; f",
+    "migrate": "dotenv -- ley --require tsm"
   },
   "dependencies": {
     "dotenv-cli": "^7.2.1",
