@@ -6,8 +6,8 @@ import styles from './CartItem.module.scss';
 import DeleteCartItem from './DeleteCartItem';
 import UpdateQuantity from './UpdateQuantity';
 
-export default function CartItem({ item, allowChange }) {
-  const cartItem = getProductById(item.id);
+export default async function CartItem({ item, allowChange }) {
+  const cartItem = await getProductById(item.id);
 
   return (
     <div

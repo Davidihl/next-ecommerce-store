@@ -1,8 +1,10 @@
 import { getSubTotal } from './getSubtotal';
 
-export function getTotalCartValue(cart) {
-  const subTotals = cart.map((cartItem) =>
-    getSubTotal(cartItem.id, cartItem.quantity),
+export async function getTotalCartValue(cart) {
+  const subTotals = await Promise.all(
+    cart.map(
+      async (cartItem) => await getSubTotal(cartItem.id, cartItem.quantity),
+    ),
   );
   return subTotals.reduce(
     (accumulator, currentValue) => accumulator + currentValue,

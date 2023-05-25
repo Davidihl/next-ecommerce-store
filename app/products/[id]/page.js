@@ -14,8 +14,8 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ProductPage({ params }) {
-  const product = getProductById(Number(params.id));
+export default async function ProductPage({ params }) {
+  const product = await getProductById(Number(params.id));
 
   if (!product) {
     notFound();
