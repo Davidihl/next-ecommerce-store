@@ -12,7 +12,9 @@ export default async function CartItem({ item, allowChange }) {
   return (
     <div
       data-test-id={`cart-product-${cartItem.id}`}
-      className={styles.cartItemWrapper}
+      className={`${styles.cartItemWrapper} ${
+        allowChange ? '' : styles.hideOnMobile
+      }`}
     >
       <div className={styles.pictureWrapper}>
         <Image

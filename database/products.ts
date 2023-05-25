@@ -24,6 +24,8 @@ export const getAllProducts = cache(async () => {
       types
     ON
       products.type_id = types.id
+    ORDER BY
+      id
 
  `;
   return products;
