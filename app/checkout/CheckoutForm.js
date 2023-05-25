@@ -1,4 +1,10 @@
+'use client';
+import mask from '@alpinejs/mask';
+import Alpine from 'alpinejs';
 import styles from './CheckoutForm.module.scss';
+
+Alpine.start();
+Alpine.plugin(mask);
 
 export default function CheckoutForm() {
   return (
@@ -34,18 +40,38 @@ export default function CheckoutForm() {
       <div className={styles.creditCard}>
         <label>
           Credit Cart Number:
-          <input data-test-id="checkout-credit-card" />
+          <input
+            x-mask="9999-9999-9999-9999"
+            placeholder="11112222333444"
+            className={styles.ccInput}
+            data-test-id="checkout-credit-card"
+          />
         </label>
-        <label>
-          Expiration Date:
-          <input data-test-id="checkout-expiration-date" />
-        </label>
-        <label>
-          Security Code:
-          <input data-test-id="checkout-security-code" />
-        </label>
+        <div className={styles.creditCardExpCvc}>
+          <label>
+            Expiration Date:
+            <input
+              className={styles.ccInput}
+              data-test-id="checkout-expiration-date"
+              placeholder="02/25"
+            />
+          </label>
+          <label>
+            Security Code:
+            <input
+              className={styles.ccInput}
+              data-test-id="checkout-security-code"
+              placeholder="123"
+            />
+          </label>
+        </div>
       </div>
-      <button>Confirm!</button>
+      <button
+        className={styles.checkoutButton}
+        data-test-id="checkout-confirm-order"
+      >
+        Confirm!
+      </button>
     </form>
   );
 }

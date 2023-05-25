@@ -64,7 +64,8 @@
 }
 
 .hideOnMobile {
-  @media screen and (max-width: $md-1) {
-    display: none;
+  display: none;
+  @media screen and (min-width: $lg) {
+    display: flex;
   }
 }

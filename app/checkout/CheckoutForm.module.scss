@@ -3,25 +3,87 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
+  gap: 1rem;
 
   label {
     display: flex;
     flex-direction: column;
     font-size: 0.75rem;
+    width: 100%;
 
     input {
       all: unset;
+
       font-size: 1rem;
       font-weight: 100;
       height: 1.5rem;
-      border: 1px solid black;
-      padding: 0.25rem;
+      border-bottom: 1px solid black;
+      padding: 0.5rem;
+      background-color: rgb(244, 244, 244);
+      margin-top: 0.25rem;
+      cursor: text;
     }
   }
 }
 
 .creditCard {
-  background-color: aqua;
+  background-image: url(../../public/images/audioWaves.svg),
+    linear-gradient(
+      to right bottom,
+      #121921,
+      #121921,
+      #121921,
+      #121921,
+      #121921,
+      #141c24,
+      #161e28,
+      #18212b,
+      #1d2732,
+      #222d3a,
+      #273441,
+      #2c3a49
+    );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: border-box;
+
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+
+  @media screen and (min-width: $sm) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  @media screen and (min-width: $md) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .ccInput {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.creditCardExpCvc {
+  display: flex;
+  gap: 1rem;
+
+  label {
+    width: 30%;
+  }
+}
+
+.checkoutButton {
+  padding: 2rem;
 }
