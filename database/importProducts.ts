@@ -16,7 +16,7 @@ export const products = [
     name: 'Pulse Lite',
     category: 'headset',
     price: 149,
-    type: 'wireless',
+    type: 'with cords',
     new: false,
     description:
       "Step into the world of quality audio without compromising on functionality with the Pulse Lite entry-level headset. Designed for those seeking an affordable option without sacrificing performance, the Lite delivers impressive sound quality for your everyday needs. Whether you're listening to music, watching videos, or engaging in voice chats, the Lite ensures a balanced audio experience. Equipped with an integrated microphone, it allows you to communicate effortlessly with clarity and precision.",
@@ -61,15 +61,3 @@ export const products = [
     alt: 'Pulse Go Headphone',
   },
 ];
-
-export function getAllProducts() {
-  return products;
-}
-
-export function getProductsByNew() {
-  return products.filter((product) => product.new === true);
-}
-
-export function getProductById(id) {
-  return products.find((product) => product.id === id);
-}

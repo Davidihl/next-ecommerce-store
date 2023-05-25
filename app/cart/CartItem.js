@@ -1,13 +1,13 @@
 import Image from 'next/image';
-import { getProductById } from '../../database/products';
+import { getProductById } from '../../database/products.ts';
 import { capitalizeFirstLetter } from '../utility/capitalizeFirstLetter';
 import { getSubTotal } from '../utility/getSubtotal';
 import styles from './CartItem.module.scss';
 import DeleteCartItem from './DeleteCartItem';
 import UpdateQuantity from './UpdateQuantity';
 
-export default function CartItem({ item, allowChange }) {
-  const cartItem = getProductById(item.id);
+export default async function CartItem({ item, allowChange }) {
+  const cartItem = await getProductById(item.id);
 
   return (
     <div

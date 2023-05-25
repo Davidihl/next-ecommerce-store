@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getAllProducts } from '../../database/products';
+import { getAllProducts } from '../../database/products.ts';
 import styles from './ProductList.module.scss';
 
 function getProducts(filter) {
@@ -11,8 +11,8 @@ function getProducts(filter) {
   }
 }
 
-export default function ProductList(props) {
-  const products = getProducts(props.filter);
+export default async function ProductList(props) {
+  const products = await getProducts(props.filter);
 
   return (
     <div className={styles.productList}>

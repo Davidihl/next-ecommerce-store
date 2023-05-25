@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getProductById } from '../../../database/products';
+import { getProductById } from '../../../database/products.ts';
 import ProductImage from '../../components/ProductImage';
 import AddToCart from './AddToCart';
 import styles from './page.module.scss';
@@ -14,8 +14,8 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ProductPage({ params }) {
-  const product = getProductById(Number(params.id));
+export default async function ProductPage({ params }) {
+  const product = await getProductById(Number(params.id));
 
   if (!product) {
     notFound();

@@ -24,7 +24,6 @@ export default function CheckoutPage() {
           <CheckoutForm orderValue={totalValue} />
         </div>
         <div className={styles.summary}>
-          <h2>Summary</h2>
           <Summary />
         </div>
       </div>
