@@ -9,10 +9,15 @@
 
 .formWrapper {
   display: flex;
+  flex-direction: column-reverse;
   width: 100%;
   min-width: 400px;
   padding-bottom: 2rem;
   justify-content: center;
+
+  @media screen and (min-width: $md) {
+    flex-direction: row;
+  }
 
   h2 {
     font-size: 1.5rem;
@@ -36,8 +41,6 @@
 
 .summary {
   margin: 0 1rem;
-  display: none;
-
   flex: 1;
 
   @media screen and (min-width: $md) {

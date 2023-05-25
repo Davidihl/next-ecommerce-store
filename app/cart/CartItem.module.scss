@@ -17,6 +17,10 @@
     }
   }
 
+  .hideOnMobile {
+    display: none;
+  }
+
   .product {
     flex: 1;
     display: flex;
