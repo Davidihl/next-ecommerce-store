@@ -1,10 +1,6 @@
 'use client';
-import mask from '@alpinejs/mask';
-import Alpine from 'alpinejs';
-import styles from './CheckoutForm.module.scss';
 
-Alpine.start();
-Alpine.plugin(mask);
+import styles from './CheckoutForm.module.scss';
 
 export default function CheckoutForm() {
   return (
@@ -41,7 +37,6 @@ export default function CheckoutForm() {
         <label>
           Credit Cart Number:
           <input
-            x-mask="9999-9999-9999-9999"
             placeholder="11112222333444"
             className={styles.ccInput}
             data-test-id="checkout-credit-card"
