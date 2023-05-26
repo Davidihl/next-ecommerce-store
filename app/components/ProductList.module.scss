@@ -14,4 +14,12 @@
   @media screen and (min-width: $lg) {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  a {
+    transition: all 0.25s;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
 }

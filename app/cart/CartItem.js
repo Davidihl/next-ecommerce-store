@@ -13,7 +13,7 @@ export default async function CartItem({ item, allowChange }) {
     <div
       data-test-id={`cart-product-${cartItem.id}`}
       className={`${styles.cartItemWrapper} ${
-        allowChange ? '' : styles.hideOnMobile
+        allowChange ? '' : styles.hideOnMobile // Only show total sum in checkout, where this component is reused.
       }`}
     >
       <div className={styles.pictureWrapper}>

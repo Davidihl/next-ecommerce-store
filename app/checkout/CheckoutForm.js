@@ -1,18 +1,22 @@
 'use client';
 
+import Link from 'next/link';
 import styles from './CheckoutForm.module.scss';
 
 export default function CheckoutForm() {
   return (
     <form className={styles.form}>
-      <label>
-        First Name
-        <input data-test-id="checkout-first-name" />
-      </label>
-      <label>
-        Last Name
-        <input data-test-id="checkout-last-name" />
-      </label>
+      <div>Please fill out the checkout form:</div>
+      <div className={styles.name}>
+        <label>
+          First Name
+          <input data-test-id="checkout-first-name" />
+        </label>
+        <label>
+          Last Name
+          <input data-test-id="checkout-last-name" />
+        </label>
+      </div>
       <label>
         Email:
         <input data-test-id="checkout-email" />
@@ -21,14 +25,16 @@ export default function CheckoutForm() {
         Adress:
         <input data-test-id="checkout-adress" />
       </label>
-      <label>
-        City:
-        <input data-test-id="checkout-city" />
-      </label>
-      <label>
-        Postal Code:
-        <input data-test-id="checkout-postal-code" />
-      </label>
+      <div className={styles.city}>
+        <label>
+          Postal Code:
+          <input data-test-id="checkout-postal-code" />
+        </label>
+        <label>
+          City:
+          <input data-test-id="checkout-city" />
+        </label>
+      </div>
       <label>
         Country:
         <input data-test-id="checkout-country" />
@@ -61,12 +67,15 @@ export default function CheckoutForm() {
           </label>
         </div>
       </div>
-      <button
-        className={styles.checkoutButton}
-        data-test-id="checkout-confirm-order"
-      >
-        Confirm!
-      </button>
+      <div className={styles.confirmWrapper}>
+        <Link
+          className={styles.checkoutButton}
+          data-test-id="checkout-confirm-order"
+          href="/checkout/thank-you"
+        >
+          Confirm Order
+        </Link>
+      </div>
     </form>
   );
 }
