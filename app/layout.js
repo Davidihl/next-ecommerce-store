@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
         <div className="topMessage">Free shipping worldwide!</div>
         <Navigation />
         {children}
-        <footer>Created by David Ihl during UpLeveled.io bootcamp</footer>
+        <footer>
+          Created by David Ihl during UpLeveled.io bootcamp spring 2023
+        </footer>
       </body>
     </html>
   );
