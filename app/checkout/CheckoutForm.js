@@ -1,43 +1,82 @@
 'use client';
 
-import Link from 'next/link';
+import { useState } from 'react';
 import styles from './CheckoutForm.module.scss';
 
 export default function CheckoutForm() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [adress, setAdress] = useState('');
+  const [postal, setPostal] = useState('');
+  const [city, setCity] = useState('');
+  const [country, setCountry] = useState('');
+  const [creditCard, setCreditCard] = useState('');
+  const [expiration, setExpiration] = useState('');
+  const [securityCode, setSecurityCode] = useState('');
+
   return (
     <form className={styles.form}>
       <div>Please fill out the checkout form:</div>
       <div className={styles.name}>
         <label>
           First Name
-          <input data-test-id="checkout-first-name" />
+          <input
+            data-test-id="checkout-first-name"
+            value={firstName}
+            onChange={(event) => setFirstName(event.currentTarget.value)}
+          />
         </label>
         <label>
           Last Name
-          <input data-test-id="checkout-last-name" />
+          <input
+            data-test-id="checkout-last-name"
+            value={lastName}
+            onChange={(event) => setLastName(event.currentTarget.value)}
+          />
         </label>
       </div>
       <label>
         Email:
-        <input data-test-id="checkout-email" />
+        <input
+          data-test-id="checkout-email"
+          value={email}
+          onChange={(event) => setEmail(event.currentTarget.value)}
+        />
       </label>
       <label>
         Adress:
-        <input data-test-id="checkout-adress" />
+        <input
+          data-test-id="checkout-adress"
+          value={adress}
+          onChange={(event) => setAdress(event.currentTarget.value)}
+        />
       </label>
       <div className={styles.city}>
         <label>
           Postal Code:
-          <input data-test-id="checkout-postal-code" />
+          <input
+            data-test-id="checkout-postal-code"
+            value={postal}
+            onChange={(event) => setPostal(event.currentTarget.value)}
+          />
         </label>
         <label>
           City:
-          <input data-test-id="checkout-city" />
+          <input
+            data-test-id="checkout-city"
+            value={city}
+            onChange={(event) => setCity(event.currentTarget.value)}
+          />
         </label>
       </div>
       <label>
         Country:
-        <input data-test-id="checkout-country" />
+        <input
+          data-test-id="checkout-country"
+          value={country}
+          onChange={(event) => setCountry(event.currentTarget.value)}
+        />
       </label>
       <div className={styles.creditCard}>
         <label>
@@ -46,6 +85,8 @@ export default function CheckoutForm() {
             placeholder="11112222333444"
             className={styles.ccInput}
             data-test-id="checkout-credit-card"
+            value={creditCard}
+            onChange={(event) => setCreditCard(event.currentTarget.value)}
           />
         </label>
         <div className={styles.creditCardExpCvc}>
@@ -55,6 +96,8 @@ export default function CheckoutForm() {
               className={styles.ccInput}
               data-test-id="checkout-expiration-date"
               placeholder="02/25"
+              value={expiration}
+              onChange={(event) => setExpiration(event.currentTarget.value)}
             />
           </label>
           <label>
@@ -63,18 +106,20 @@ export default function CheckoutForm() {
               className={styles.ccInput}
               data-test-id="checkout-security-code"
               placeholder="123"
+              value={securityCode}
+              onChange={(event) => setSecurityCode(event.currentTarget.value)}
             />
           </label>
         </div>
       </div>
       <div className={styles.confirmWrapper}>
-        <Link
+        <button
           className={styles.checkoutButton}
           data-test-id="checkout-confirm-order"
           href="/checkout/thank-you"
         >
           Confirm Order
-        </Link>
+        </button>
       </div>
     </form>
   );

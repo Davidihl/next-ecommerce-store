@@ -4,8 +4,8 @@ import thanks from '../../../public/images/thanks.png';
 import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'Animals page',
-  description: 'My favorite animals',
+  title: 'Thank you for your order',
+  description: 'Your purchase has been confirmed',
 };
 
 export default function ThankYouPage() {
