@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import styles from './CheckoutForm.module.scss';
 
@@ -14,6 +15,7 @@ export default function CheckoutForm() {
   const [creditCard, setCreditCard] = useState('');
   const [expiration, setExpiration] = useState('');
   const [securityCode, setSecurityCode] = useState('');
+  const router = useRouter();
 
   return (
     <form className={styles.form}>
@@ -116,7 +118,7 @@ export default function CheckoutForm() {
         <button
           className={styles.checkoutButton}
           data-test-id="checkout-confirm-order"
-          href="/checkout/thank-you"
+          formAction={() => router.push('/checkout/thank-you')}
         >
           Confirm Order
         </button>
