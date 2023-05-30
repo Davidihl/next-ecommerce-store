@@ -50,7 +50,7 @@ export default function CheckoutForm() {
       <div>Please fill out the checkout form:</div>
       <div className={styles.name}>
         <label>
-          First Name
+          First Name*
           <input
             data-test-id="checkout-first-name"
             value={firstName}
@@ -58,7 +58,7 @@ export default function CheckoutForm() {
           />
         </label>
         <label>
-          Last Name
+          Last Name*
           <input
             data-test-id="checkout-last-name"
             value={lastName}
@@ -67,7 +67,7 @@ export default function CheckoutForm() {
         </label>
       </div>
       <label>
-        Email:
+        Email*:
         <input
           data-test-id="checkout-email"
           value={email}
@@ -75,7 +75,7 @@ export default function CheckoutForm() {
         />
       </label>
       <label>
-        Adress:
+        Adress*
         <input
           data-test-id="checkout-adress"
           value={address}
@@ -84,7 +84,7 @@ export default function CheckoutForm() {
       </label>
       <div className={styles.city}>
         <label>
-          Postal Code:
+          Postal Code*
           <input
             data-test-id="checkout-postal-code"
             value={postal}
@@ -92,7 +92,7 @@ export default function CheckoutForm() {
           />
         </label>
         <label>
-          City:
+          City*
           <input
             data-test-id="checkout-city"
             value={city}
@@ -101,16 +101,17 @@ export default function CheckoutForm() {
         </label>
       </div>
       <label>
-        Country:
+        Country*
         <input
           data-test-id="checkout-country"
           value={country}
           onChange={(event) => setCountry(event.currentTarget.value)}
         />
       </label>
+      <div>Payment information:</div>
       <div className={styles.creditCard}>
         <label>
-          Credit Cart Number:
+          Credit Cart Number*
           <input
             placeholder="11112222333444"
             className={styles.ccInput}
@@ -121,7 +122,7 @@ export default function CheckoutForm() {
         </label>
         <div className={styles.creditCardExpCvc}>
           <label>
-            Expiration Date:
+            Expiration Date*
             <input
               className={styles.ccInput}
               data-test-id="checkout-expiration-date"
@@ -131,7 +132,7 @@ export default function CheckoutForm() {
             />
           </label>
           <label>
-            Security Code:
+            Security Code*
             <input
               className={styles.ccInput}
               data-test-id="checkout-security-code"
@@ -144,12 +145,14 @@ export default function CheckoutForm() {
       </div>
       <div className={styles.confirmWrapper}>
         <button
-          disabled={String(formValid)}
+          disabled={!formValid}
           className={`${styles.checkoutButton} ${
             formValid ? '' : styles.disabledButton
           }`}
           data-test-id="checkout-confirm-order"
-          formAction={() => router.push('/checkout/thank-you')}
+          formAction={() => {
+            router.push('/checkout/thank-you');
+          }}
         >
           Confirm Order
         </button>
