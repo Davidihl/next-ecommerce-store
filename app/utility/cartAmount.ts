@@ -1,6 +1,6 @@
-import { Cart } from '../products/[id]/actions';
+import { CartItemType } from '../products/[id]/actions';
 
-export function cartAmount(cart: Cart[]) {
+export function cartAmount(cart: CartItemType[]) {
   const amounts = cart.map((cartItem) => cartItem.quantity);
 
   return amounts.reduce(

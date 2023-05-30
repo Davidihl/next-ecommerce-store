@@ -1,19 +1,25 @@
 import { Fragment } from 'react';
+import type { CartItemType } from '../products/[id]/actions';
 import { checkCookie } from '../utility/checkCookie';
 import { getCookie } from '../utility/cookie';
 import { getTotalCartValue } from '../utility/getTotalCartValue';
 import styles from './Cart.module.scss';
 import CartItem from './CartItem';
 
-export default function Cart(props) {
+type Props = {
+  allowChange: boolean;
+};
+
+export default function Cart(props: Props) {
   const cartCookie = getCookie('cart'); // Get cookie from client as string
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
   const totalValue = getTotalCartValue(cart);
 
   return (
     <>
-      {cart.map((cartItem) => (
+      {cart.map((cartItem: CartItemType) => (
         <Fragment key={`cartItem-div-${cartItem.id}`}>
+          {/* @ts-expect-error Async Server Component */}
           <CartItem item={cartItem} allowChange={props.allowChange} />
         </Fragment>
       ))}
