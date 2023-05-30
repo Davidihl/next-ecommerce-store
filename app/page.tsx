@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProductsByNew } from '../database/products.ts';
+import { getProductsByNew } from '../database/products';
 import heroImage from '../public/images/hero_hd.png';
 import ProductList from './components/ProductList';
 import styles from './page.module.scss';
@@ -27,6 +27,7 @@ export default function Home() {
       </section>
       <section className={styles.newArrival}>
         <h2>New Arrivals</h2>
+        {/* @ts-expect-error Async Server Component */}
         <ProductList filter={getProductsByNew} />
       </section>
       <section className={styles.about}>

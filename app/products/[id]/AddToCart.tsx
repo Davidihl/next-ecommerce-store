@@ -5,7 +5,11 @@ import stayPositive from '../../utility/stayPositive';
 import { updateCart } from './actions';
 import styles from './AddToCart.module.scss';
 
-export default function AddToCart({ id }) {
+type Props = {
+  id: number;
+};
+
+export default function AddToCart(props: Props) {
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
 
@@ -26,7 +30,7 @@ export default function AddToCart({ id }) {
         className={styles.addButton}
         formAction={async () => {
           router.refresh();
-          await updateCart(id, quantity);
+          await updateCart(props.id, quantity);
         }}
       >
         Add to cart

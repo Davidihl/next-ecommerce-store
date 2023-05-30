@@ -10,6 +10,7 @@ export default function ProductsPage() {
   return (
     <section className={styles.productWrapper}>
       <h1>Explore our products</h1>
+      {/* @ts-expect-error Async Server Component */}
       <ProductList />
     </section>
   );

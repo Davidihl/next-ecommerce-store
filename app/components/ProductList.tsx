@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getAllProducts } from '../../database/products.ts';
+import { getAllProducts } from '../../database/products';
+import type { Product } from '../../migrations/1684957255-createTableProducts';
 import styles from './ProductList.module.scss';
 
-function getProducts(filter) {
+function getProducts(filter?: () => any) {
   if (filter) {
     return filter();
   } else {
@@ -11,12 +12,16 @@ function getProducts(filter) {
   }
 }
 
-export default async function ProductList(props) {
+type Props = {
+  filter: () => any;
+};
+
+export default async function ProductList(props: Props) {
   const products = await getProducts(props.filter);
 
   return (
     <div className={styles.productList}>
-      {products.map((product) => {
+      {products.map((product: Product) => {
         return (
           <Link
             key={`product-${product.id}`}

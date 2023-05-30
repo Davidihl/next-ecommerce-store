@@ -1,21 +1,27 @@
 import { notFound } from 'next/navigation';
-import { getProductById } from '../../../database/products.ts';
+import { getProductById } from '../../../database/products';
 import ProductImage from '../../components/ProductImage';
 import AddToCart from './AddToCart';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
-export function generateMetadata({ params }) {
-  const product = getProductById(Number(params.id));
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export async function generateMetadata(props: Props) {
+  const product = await getProductById(Number(props.params.id));
   return {
-    title: product.name,
-    description: product.description,
+    title: product?.name,
+    description: product?.description,
   };
 }
 
-export default async function ProductPage({ params }) {
-  const product = await getProductById(Number(params.id));
+export default async function ProductPage(props: Props) {
+  const product = await getProductById(Number(props.params.id));
 
   if (!product) {
     notFound();
