@@ -119,5 +119,25 @@
     &:hover {
       background-color: #2c3a49;
     }
+
+    &:active {
+      background-color: #2c3a49;
+      opacity: 0.8;
+    }
+  }
+
+  .disabledButton {
+    opacity: 0.5;
+
+    &:hover {
+      background-color: black;
+      cursor: not-allowed;
+    }
+
+    &:active {
+      background-color: black;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 }

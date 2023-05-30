@@ -1,21 +1,49 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './CheckoutForm.module.scss';
 
 export default function CheckoutForm() {
+  const router = useRouter();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [adress, setAdress] = useState('');
+  const [address, setAddress] = useState('');
   const [postal, setPostal] = useState('');
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
   const [creditCard, setCreditCard] = useState('');
   const [expiration, setExpiration] = useState('');
   const [securityCode, setSecurityCode] = useState('');
-  const router = useRouter();
+  const [formValid, setFormValid] = useState(false);
+
+  useEffect(() => {
+    const formData = [
+      firstName,
+      lastName,
+      email,
+      address,
+      postal,
+      city,
+      country,
+      creditCard,
+      expiration,
+      securityCode,
+    ];
+    setFormValid(formData.every((formField) => formField !== ''));
+  }, [
+    firstName,
+    lastName,
+    email,
+    address,
+    postal,
+    city,
+    country,
+    creditCard,
+    expiration,
+    securityCode,
+  ]);
 
   return (
     <form className={styles.form}>
@@ -50,8 +78,8 @@ export default function CheckoutForm() {
         Adress:
         <input
           data-test-id="checkout-adress"
-          value={adress}
-          onChange={(event) => setAdress(event.currentTarget.value)}
+          value={address}
+          onChange={(event) => setAddress(event.currentTarget.value)}
         />
       </label>
       <div className={styles.city}>
@@ -116,7 +144,10 @@ export default function CheckoutForm() {
       </div>
       <div className={styles.confirmWrapper}>
         <button
-          className={styles.checkoutButton}
+          disabled={String(formValid)}
+          className={`${styles.checkoutButton} ${
+            formValid ? '' : styles.disabledButton
+          }`}
           data-test-id="checkout-confirm-order"
           formAction={() => router.push('/checkout/thank-you')}
         >

@@ -15,7 +15,13 @@ export default function ThankYouPage() {
         <h1 className={styles.thankYou}>Thank you for your purchase!</h1>
         <p>Your order has been confirmed</p>
       </div>
-      <Image src={thanks} styles={styles.image} width={300} height={300} />
+      <Image
+        src={thanks}
+        styles={styles.image}
+        width={300}
+        height={300}
+        alt="Thank you for your purchase! Image showing headphones"
+      />
       <Link href="/">Back to shopping</Link>
     </main>
   );
