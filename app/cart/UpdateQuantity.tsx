@@ -6,7 +6,12 @@ import removeIcon from '../../public/remove.svg';
 import { decreaseQuantity, increaseQuantity } from './actions';
 import styles from './UpdateQuantity.module.scss';
 
-export default function UpdateQuantity({ id, quantity }) {
+type Props = {
+  id: number;
+  quantity: number;
+};
+
+export default function UpdateQuantity(props: Props) {
   const router = useRouter();
 
   return (
@@ -15,16 +20,16 @@ export default function UpdateQuantity({ id, quantity }) {
         className={styles.decrease}
         formAction={async () => {
           router.refresh();
-          await decreaseQuantity(id);
+          await decreaseQuantity(props.id);
         }}
       >
         <Image src={removeIcon} alt="Decrease Quantity Icon" />
       </button>
       <div
         className={styles.quantity}
-        data-test-id={`cart-product-quantity-${id}`}
+        data-test-id={`cart-product-quantity-${props.id}`}
       >
-        {quantity}
+        {props.quantity}
       </div>
       <button
         className={styles.increase}
