@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import { getProductById } from '../../database/products';
 import type { CartItemType } from '../products/[id]/actions';
 import { checkCookie } from '../utility/checkCookie';
 import { getCookie } from '../utility/cookie';
@@ -15,10 +14,9 @@ export default function Cart(props: Props) {
   const cartCookie = getCookie('cart'); // Get cookie from client as string
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
   const totalValue = getTotalCartValue(cart);
-
   return (
     <>
-      {cart
+      {cart.length > 0
         ? cart.map((item: CartItemType) => (
             <Fragment key={`cartItem-div-${item.id}`}>
               {/* @ts-expect-error Async Server Component */}
