@@ -14,10 +14,13 @@ type Props = {
 
 export async function generateMetadata(props: Props) {
   const product = await getProductById(Number(props.params.id));
-  return {
-    title: product?.name,
-    description: product?.description,
-  };
+  if (product) {
+    return {
+      title: product.name,
+      description: product.description,
+    };
+  }
+  throw new Error(`Product with id ${props.params.id} not found`);
 }
 
 export default async function ProductPage(props: Props) {

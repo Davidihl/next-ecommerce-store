@@ -35,7 +35,7 @@ export default function UpdateQuantity(props: Props) {
         className={styles.increase}
         formAction={async () => {
           router.refresh();
-          await increaseQuantity(id);
+          await increaseQuantity(props.id);
         }}
       >
         <Image src={addIcon} alt="Increase Quantity Icon" />

@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { getProductById } from '../../database/products';
 import type { CartItemType } from '../products/[id]/actions';
 import { checkCookie } from '../utility/checkCookie';
 import { getCookie } from '../utility/cookie';
@@ -17,12 +18,14 @@ export default function Cart(props: Props) {
 
   return (
     <>
-      {cart.map((cartItem: CartItemType) => (
-        <Fragment key={`cartItem-div-${cartItem.id}`}>
-          {/* @ts-expect-error Async Server Component */}
-          <CartItem item={cartItem} allowChange={props.allowChange} />
-        </Fragment>
-      ))}
+      {cart
+        ? cart.map((item: CartItemType) => (
+            <Fragment key={`cartItem-div-${item.id}`}>
+              {/* @ts-expect-error Async Server Component */}
+              <CartItem item={item} allowChange={props.allowChange} />
+            </Fragment>
+          ))
+        : ''}
       {cart.length > 0 ? (
         <div data-test-id="cart-total" className={styles.totalSumContainer}>
           <span className={styles.totalSumText}>Total:</span>

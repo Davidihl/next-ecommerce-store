@@ -13,40 +13,42 @@ type Props = {
 };
 
 export default async function CartItem(props: Props) {
-  const cartItem = await getProductById(props.item.id);
+  const product = await getProductById(props.item.id);
 
-  return (
-    <div
-      data-test-id={`cart-product-${cartItem?.id}`}
-      className={`${styles.cartItemWrapper} ${
-        props.allowChange ? '' : styles.hideOnMobile // Only show total sum in checkout, where this component is reused.
-      }`}
-    >
-      <div className={styles.pictureWrapper}>
-        <Image
-          src={cartItem ? cartItem.image : ''}
-          alt={cartItem ? cartItem.alt : ''}
-          width="100"
-          height="100"
-        />
-        <div className={styles.product}>
-          <p className={styles.productName}>{cartItem?.name}</p>
-          <p>{capitalizeFirstLetter(cartItem ? cartItem.category : '')}</p>
+  if (product) {
+    return (
+      <div
+        data-test-id={`cart-product-${product.id}`}
+        className={`${styles.cartItemWrapper} ${
+          props.allowChange ? '' : styles.hideOnMobile // Only show total sum in checkout, where this component is reused.
+        }`}
+      >
+        <div className={styles.pictureWrapper}>
+          <Image
+            src={product.image}
+            alt={product.alt}
+            width="100"
+            height="100"
+          />
+          <div className={styles.product}>
+            <p className={styles.productName}>{product.name}</p>
+            <p>{capitalizeFirstLetter(product.category)}</p>
+          </div>
         </div>
-      </div>
-      {props.allowChange ? (
-        <div className={styles.quantity}>
-          {/* @ts-expect-error Async Server Component */}
-          <UpdateQuantity id={cartItem?.id} quantity={props.item.quantity} />
+        {props.allowChange ? (
+          <div className={styles.quantity}>
+            <UpdateQuantity id={product.id} quantity={props.item.quantity} />
+          </div>
+        ) : (
+          <div className={styles.quantity}>{props.item.quantity} x</div>
+        )}
+        <div className={styles.total}>
+          <span>{getSubTotal(product.id, props.item.quantity)}</span>
+          <span>&nbsp;EUR</span>
         </div>
-      ) : (
-        <div className={styles.quantity}>{props.item.quantity} x</div>
-      )}
-      <div className={styles.total}>
-        <span>{getSubTotal(cartItem?.id, props.item.quantity)}</span>
-        <span>&nbsp;EUR</span>
+        {props.allowChange ? <DeleteCartItem id={props.item.id} /> : ''}
       </div>
-      {props.allowChange ? <DeleteCartItem id={props.item.id} /> : ''}
-    </div>
-  );
+    );
+  }
+  throw new Error(`Product with id ${props.item.id} not found`);
 }

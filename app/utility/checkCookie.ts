@@ -1,6 +1,6 @@
 import { parseJson } from './json';
 
-export function checkCookie(cookieName) {
+export function checkCookie(cookieName: string) {
   if (!cookieName) {
     return [];
   } else {

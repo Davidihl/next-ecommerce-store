@@ -1,10 +1,10 @@
 import sjson from 'secure-json-parse';
 
-export function parseJson(string) {
-  if (!string) return undefined;
+export function parseJson(cookieValue: string) {
+  if (!cookieValue) return undefined;
 
   try {
-    return sjson(string);
+    return sjson(cookieValue);
   } catch {
     return undefined;
   }
