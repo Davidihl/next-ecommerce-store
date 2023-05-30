@@ -1,6 +1,6 @@
 import './globals.scss';
 import { Heebo } from 'next/font/google';
-import Navigation from './Navigation';
+import Navigation from './Navigation.js';
 
 const heebo = Heebo({ subsets: ['latin'] });
 

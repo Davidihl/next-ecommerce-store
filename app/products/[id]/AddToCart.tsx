@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import stayPositive from '../../utility/stayPositive';
 import { updateCart } from './actions';
 import styles from './AddToCart.module.scss';
@@ -21,8 +21,8 @@ export default function AddToCart(props: Props) {
         className={styles.quantity}
         min="1"
         data-test-id="product-quantity"
-        onChange={(event) =>
-          setQuantity(Number(stayPositive(event.currentTarget.value)))
+        onChange={(event: ChangeEvent<HTMLInputElement>) =>
+          setQuantity(stayPositive(parseInt(event.currentTarget.value)))
         }
       />
       <button

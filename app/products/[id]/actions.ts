@@ -3,12 +3,17 @@ import { cookies } from 'next/headers';
 import { checkCookie } from '../../utility/checkCookie';
 import { getCookie } from '../../utility/cookie';
 
-export async function updateCart(id, quantity) {
+export type Cart = {
+  id: number;
+  quantity: number;
+};
+
+export async function updateCart(id: number, quantity: number) {
   const cartCookie = getCookie('cart'); // Get cookie from client as string
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
 
   // Find item in cart, if it doesnt exist -> return undefined
-  const updateProductInCart = cart.find((product) => {
+  const updateProductInCart = cart.find((product: Cart) => {
     return product.id === id;
   });
 
