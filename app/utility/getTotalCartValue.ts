@@ -1,12 +1,7 @@
-import { CartItemType } from '../products/[id]/actions';
-import { getSubTotal } from './x_getSubtotal';
+import { ProductWithQuantityAndPrice } from '../cart/Cart';
 
-export async function getTotalCartValue(cart: CartItemType[]) {
-  const subTotals = await Promise.all(
-    cart.map(async (cartItem) =>
-      Number(await getSubTotal(cartItem.id, cartItem.quantity)),
-    ),
-  );
+export function getTotalCartValue(cart: ProductWithQuantityAndPrice[]) {
+  const subTotals = cart.map((cartItem) => Number(cartItem.subTotal));
 
   return subTotals.reduce(
     (accumulator, currentValue) => accumulator + currentValue,

@@ -37,7 +37,8 @@ export default async function Cart(props: Props) {
     subTotal: Number(product.price) * Number(product.quantity),
   }));
 
-  const totalValue = getTotalCartValue(cart);
+  const totalValue = getTotalCartValue(productsWithQuantityAndPrice);
+  console.log(productsWithQuantityAndPrice);
 
   return (
     <>
