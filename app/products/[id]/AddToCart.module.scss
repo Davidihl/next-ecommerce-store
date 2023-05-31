@@ -28,3 +28,20 @@
   padding: 0 1rem;
   cursor: pointer;
 }
+
+.notification {
+  padding-top: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: green;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+  transition: all 0.25s;
+}
+
+.transition {
+  transition: all 0.5s;
+}

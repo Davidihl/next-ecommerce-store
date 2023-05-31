@@ -27,7 +27,7 @@ export default function Home() {
       </section>
       <section className={styles.newArrival}>
         <h2>New Arrivals</h2>
-        {/* @ts-expect-error Async Server Component */}
+        {/* @ts-expect-error Async Server Component https://github.com/vercel/next.js/issues/42292 */}
         <ProductList filter={getProductsByNew} />
       </section>
       <section className={styles.about}>

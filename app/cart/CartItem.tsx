@@ -1,8 +1,5 @@
 import Image from 'next/image';
-import { getProductById } from '../../database/products';
-import { CartItemType } from '../products/[id]/actions';
 import { capitalizeFirstLetter } from '../utility/capitalizeFirstLetter';
-import { getSubTotal } from '../utility/getSubtotal';
 import { ProductWithQuantityAndPrice } from './Cart';
 import styles from './CartItem.module.scss';
 import DeleteCartItem from './DeleteCartItem';

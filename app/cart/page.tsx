@@ -16,7 +16,7 @@ export default function CartPage() {
         <div className={styles.quantity}>Quantity</div>
         <div className={styles.total}>Total</div>
       </div>
-      {/* @ts-expect-error Async Server Component */}
+      {/* @ts-expect-error Async Server Component https://github.com/vercel/next.js/issues/42292 */}
       <Cart allowChange={true} />
       <CheckoutButton />
     </main>

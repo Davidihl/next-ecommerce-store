@@ -1,6 +1,7 @@
 import './globals.scss';
 import { Heebo } from 'next/font/google';
-import Navigation from './Navigation.js';
+import styles from './layout.module.scss';
+import Navigation from './Navigation';
 
 const heebo = Heebo({ subsets: ['latin'] });
 
@@ -15,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={heebo.className}>
+      <body className={`${heebo.className} ${styles.bodyBackground}`}>
         <div className="topMessage">Free shipping worldwide!</div>
         <Navigation />
         {children}

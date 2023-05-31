@@ -1,5 +1,5 @@
 import { CartItemType } from '../products/[id]/actions';
-import { getSubTotal } from './getSubtotal';
+import { getSubTotal } from './x_getSubtotal';
 
 export async function getTotalCartValue(cart: CartItemType[]) {
   const subTotals = await Promise.all(
