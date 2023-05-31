@@ -3,13 +3,13 @@ import { getProductById } from '../../database/products';
 import { CartItemType } from '../products/[id]/actions';
 import { capitalizeFirstLetter } from '../utility/capitalizeFirstLetter';
 import { getSubTotal } from '../utility/getSubtotal';
-import { ProductWithQuantity } from './Cart';
+import { ProductWithQuantityAndPrice } from './Cart';
 import styles from './CartItem.module.scss';
 import DeleteCartItem from './DeleteCartItem';
 import UpdateQuantity from './UpdateQuantity';
 
 type Props = {
-  product: ProductWithQuantity;
+  product: ProductWithQuantityAndPrice;
   allowChange: boolean;
 };
 
@@ -46,7 +46,7 @@ export default function CartItem(props: Props) {
         <div className={styles.quantity}>{props.product.quantity} x</div>
       )}
       <div className={styles.total}>
-        <span>{getSubTotal(props.product.id, props.product.quantity)}</span>
+        <span>{props.product.subTotal}</span>
         <span>&nbsp;EUR</span>
       </div>
       {props.allowChange ? <DeleteCartItem id={props.product.id} /> : ''}

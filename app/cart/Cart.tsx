@@ -8,8 +8,9 @@ import { getTotalCartValue } from '../utility/getTotalCartValue';
 import styles from './Cart.module.scss';
 import CartItem from './CartItem';
 
-export type ProductWithQuantity = Product & {
+export type ProductWithQuantityAndPrice = Product & {
   quantity: number;
+  subTotal: number;
 };
 
 type Props = {
@@ -21,18 +22,27 @@ export default async function Cart(props: Props) {
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
   const cartIds = cart.map((cartItem: CartItemType) => cartItem.id);
 
-  const totalValue = getTotalCartValue(cart);
-
+  // Get all products from database that are in my cart
   const products = await getProductsInCart(cartIds);
+
+  // Transform the array that the product data contain quantity
   const productsWithQuantity = products.map((product) => ({
     ...product,
     ...cart.find((cartItem: CartItemType) => cartItem.id === product.id),
   }));
 
+  // Transform the array again to store the subtotal in the object
+  const productsWithQuantityAndPrice = productsWithQuantity.map((product) => ({
+    ...product,
+    subTotal: Number(product.price) * Number(product.quantity),
+  }));
+
+  const totalValue = getTotalCartValue(cart);
+
   return (
     <>
       {cart.length > 0
-        ? productsWithQuantity.map((product) => (
+        ? productsWithQuantityAndPrice.map((product) => (
             <Fragment key={`cartItem-div-${product.id}`}>
               <CartItem product={product} allowChange={props.allowChange} />
             </Fragment>
