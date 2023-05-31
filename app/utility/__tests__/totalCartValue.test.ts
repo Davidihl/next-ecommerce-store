@@ -35,3 +35,26 @@ test('calculate total card value', () => {
 
   expect(getTotalCartValue(cart)).toBe(1094);
 });
+
+test('Passing invalid arguments', () => {
+  // @ts-expect-error passing a number
+  expect(() => getTotalCartValue(42)).toThrow(
+    'Argument is not the expected array',
+  );
+  // @ts-expect-error passing a string
+  expect(() => getTotalCartValue('42')).toThrow(
+    'Argument is not the expected array',
+  );
+  // @ts-expect-error passing a boolean
+  expect(() => getTotalCartValue(true)).toThrow(
+    'Argument is not the expected array',
+  );
+  // @ts-expect-error passing an object
+  expect(() => getTotalCartValue({ id: 1, quantity: 3 })).toThrow(
+    'Argument is not the expected array',
+  );
+  // @ts-expect-error passing undefined
+  expect(() => getTotalCartValue()).toThrow(
+    'Argument is not the expected array',
+  );
+});
