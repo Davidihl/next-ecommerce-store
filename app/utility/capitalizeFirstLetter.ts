@@ -3,5 +3,5 @@ export function capitalizeFirstLetter(inputValue: string) {
     throw new Error('Argument is not a string');
   }
 
-  return inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase();
+  return inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
 }
