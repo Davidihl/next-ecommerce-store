@@ -19,7 +19,6 @@ export type ProductWithQuantity = Product & {
 
 type Props = {
   allowChange: boolean;
-  hoverCart: boolean;
 };
 
 export default async function Cart(props: Props) {
@@ -51,21 +50,16 @@ export default async function Cart(props: Props) {
       {cart.length > 0
         ? productsWithQuantityAndPrice.map(
             (product: ProductWithQuantityAndPrice) => (
-              <Fragment key={`cartItem-div-${product.id}`}>
-                <CartItem
-                  product={product}
-                  allowChange={props.allowChange}
-                  hoverCart={props.hoverCart}
-                />
-              </Fragment>
+              <CartItem
+                key={`cartItem-div-${product.id}`}
+                product={product}
+                allowChange={props.allowChange}
+              />
             ),
           )
         : ''}
       {cart.length > 0 ? (
-        <div
-          data-test-id={!props.hoverCart ? 'cart-total' : ''}
-          className={styles.totalSumContainer}
-        >
+        <div data-test-id="cart-total" className={styles.totalSumContainer}>
           <span className={styles.totalSumText}>Total:</span>
           <span className={styles.totalSumValue}>{totalValue}</span>
           <span className={styles.totalSumCurrency}>EUR</span>
