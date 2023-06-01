@@ -15,5 +15,6 @@
     "pulsepro",
     "pulsepure",
     "pulsesound"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

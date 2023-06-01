@@ -8,6 +8,7 @@ import UpdateQuantity from './UpdateQuantity';
 type Props = {
   product: ProductWithQuantityAndPrice;
   allowChange: boolean;
+  hoverCart: boolean;
 };
 
 export default function CartItem(props: Props) {
@@ -15,7 +16,7 @@ export default function CartItem(props: Props) {
 
   return (
     <div
-      data-test-id={`cart-product-${props.product.id}`}
+      data-test-id={!props.hoverCart ? `cart-product-${props.product.id}` : ''}
       className={`${styles.cartItemWrapper} ${
         props.allowChange ? '' : styles.hideOnMobile // Only show total sum in checkout, where this component is reused.
       }`}
@@ -26,6 +27,9 @@ export default function CartItem(props: Props) {
           alt={props.product.alt}
           width="100"
           height="100"
+          data-test-id={
+            !props.hoverCart ? `cart-product-image-${props.product.id}` : ''
+          }
         />
         <div className={styles.product}>
           <p className={styles.productName}>{props.product.name}</p>

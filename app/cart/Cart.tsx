@@ -13,8 +13,13 @@ export type ProductWithQuantityAndPrice = Product & {
   subTotal: number;
 };
 
+export type ProductWithQuantity = Product & {
+  quantity: number;
+};
+
 type Props = {
   allowChange: boolean;
+  hoverCart: boolean;
 };
 
 export default async function Cart(props: Props) {
@@ -26,30 +31,41 @@ export default async function Cart(props: Props) {
   const products = await getProductsInCart(cartIds);
 
   // Transform the array that the product data contain quantity
-  const productsWithQuantity = products.map((product) => ({
+  const productsWithQuantity = products.map((product: Product) => ({
     ...product,
     ...cart.find((cartItem: CartItemType) => cartItem.id === product.id),
   }));
 
   // Transform the array again to store the subtotal in the object
-  const productsWithQuantityAndPrice = productsWithQuantity.map((product) => ({
-    ...product,
-    subTotal: Number(product.price) * Number(product.quantity),
-  }));
+  const productsWithQuantityAndPrice = productsWithQuantity.map(
+    (product: ProductWithQuantity) => ({
+      ...product,
+      subTotal: Number(product.price) * Number(product.quantity),
+    }),
+  );
 
   const totalValue = getTotalCartValue(productsWithQuantityAndPrice);
 
   return (
     <>
       {cart.length > 0
-        ? productsWithQuantityAndPrice.map((product) => (
-            <Fragment key={`cartItem-div-${product.id}`}>
-              <CartItem product={product} allowChange={props.allowChange} />
-            </Fragment>
-          ))
+        ? productsWithQuantityAndPrice.map(
+            (product: ProductWithQuantityAndPrice) => (
+              <Fragment key={`cartItem-div-${product.id}`}>
+                <CartItem
+                  product={product}
+                  allowChange={props.allowChange}
+                  hoverCart={props.hoverCart}
+                />
+              </Fragment>
+            ),
+          )
         : ''}
       {cart.length > 0 ? (
-        <div data-test-id="cart-total" className={styles.totalSumContainer}>
+        <div
+          data-test-id={!props.hoverCart ? 'cart-total' : ''}
+          className={styles.totalSumContainer}
+        >
           <span className={styles.totalSumText}>Total:</span>
           <span className={styles.totalSumValue}>{totalValue}</span>
           <span className={styles.totalSumCurrency}>EUR</span>

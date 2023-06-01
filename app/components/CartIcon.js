@@ -20,6 +20,9 @@ export default function CartIcon() {
         <Badge value={cartItemAmount} />
         <Image src={cartIcon} alt="Cart Icon" />
       </Link>
+
+      {/*
+      Rework into Server/Client Component: Fetch Cart data here and pass the object to client component
       <div className={styles.hoverCart}>
         <div className={styles.cart}>
           <h2 className={styles.hoverCartHeadline}>Your Cart</h2>
@@ -34,6 +37,7 @@ export default function CartIcon() {
           <CheckoutButton className={styles.hoverMenuClose} />
         </div>
       </div>
+      */}
     </div>
   );
 }
