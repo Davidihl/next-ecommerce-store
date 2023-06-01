@@ -38,7 +38,6 @@ export default async function Cart(props: Props) {
   }));
 
   const totalValue = getTotalCartValue(productsWithQuantityAndPrice);
-  console.log(productsWithQuantityAndPrice);
 
   return (
     <>

@@ -13,3 +13,8 @@ test('pass valid arguments', () => {
   expect(checkCookie(cartString)).toStrictEqual(cart);
   expect(checkCookie(undefined)).toStrictEqual([]);
 });
+
+test('pass invalid arguments', () => {
+  // @ts-expect-error passing a number
+  expect(checkCookie(1)).toStrictEqual(undefined);
+});

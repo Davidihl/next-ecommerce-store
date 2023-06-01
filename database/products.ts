@@ -83,6 +83,7 @@ export const getProductsInCart = cache(async (cartIds: number[]) => {
       products.type_id = types.id
     WHERE
       products.id = any(ARRAY[${cartIds}::integer[]])
+    ORDER BY ARRAY_POSITION(${cartIds}, products.id);
 
   `;
   return products;
