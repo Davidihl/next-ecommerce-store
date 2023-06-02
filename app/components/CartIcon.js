@@ -1,13 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import cartIcon from '../../public/cart.svg';
-import Cart from '../cart/Cart';
 import { cartAmount } from '../utility/cartAmount';
 import { checkCookie } from '../utility/checkCookie';
 import { getCookie } from '../utility/cookie';
 import Badge from './Badge';
 import styles from './CartIcon.module.scss';
-import CheckoutButton from './CheckoutButton';
+
+// import Cart from '../cart/Cart';
+// import CheckoutButton from './CheckoutButton';
 
 export default function CartIcon({ repo }) {
   const cartCookie = getCookie('cart'); // Get cookie from client as string

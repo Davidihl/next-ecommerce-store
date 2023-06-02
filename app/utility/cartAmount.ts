@@ -1,4 +1,3 @@
-import CartItem from '../cart/CartItem';
 import { CartItemType } from '../products/[id]/actions';
 
 export function cartAmount(cart: CartItemType[]) {

@@ -59,42 +59,35 @@ test('add product / change quantity / remove product from cart test', async ({
 
   // Change quantity
   await page
-    .getByRole('main')
     .getByTestId('cart-product-5')
     .getByRole('button', { name: 'Decrease Quantity Icon' })
     .click();
   await page
-    .getByRole('main')
+
     .getByTestId('cart-product-5')
     .getByRole('button', { name: 'Decrease Quantity Icon' })
     .click();
   await page
-    .getByRole('main')
+
     .getByTestId('cart-product-5')
     .getByRole('button', { name: 'Decrease Quantity Icon' })
     .click();
 
   // Check if quantity is as expected
   await expect(
-    page
-      .getByRole('main')
-      .getByTestId('cart-product-quantity-5')
-      .getByText('1'),
+    page.getByTestId('cart-product-quantity-5').getByText('1'),
   ).toBeVisible();
 
   // Change other quantity
   await page
-    .getByRole('main')
+
     .getByTestId('cart-product-3')
     .getByRole('button', { name: 'Increase Quantity Icon' })
     .click();
 
   // Check if quantity is as expected
   await expect(
-    page
-      .getByRole('main')
-      .getByTestId('cart-product-quantity-3')
-      .getByText('2'),
+    page.getByTestId('cart-product-quantity-3').getByText('2'),
   ).toBeVisible();
 
   // Remove item

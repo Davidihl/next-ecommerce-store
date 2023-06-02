@@ -75,9 +75,9 @@ export default function CheckoutForm() {
         />
       </label>
       <label>
-        Adress*
+        Address*
         <input
-          data-test-id="checkout-adress"
+          data-test-id="checkout-address"
           value={address}
           onChange={(event) => setAddress(event.currentTarget.value)}
         />
