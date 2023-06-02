@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import thanks from '../../../public/images/thanks.png';
+import UpdateMetaData from '../../components/UpdateMetadata';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -11,6 +12,10 @@ export const metadata = {
 export default function ThankYouPage() {
   return (
     <main className={styles.wrapper}>
+      <UpdateMetaData
+        title={metadata.title}
+        description={metadata.description}
+      />
       <div>
         <h1 className={styles.thankYou}>Thank you for your purchase!</h1>
         <p>Your order has been confirmed</p>

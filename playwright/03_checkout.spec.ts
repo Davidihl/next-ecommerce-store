@@ -71,5 +71,5 @@ test('test checkout flow', async ({ page }) => {
 
   // Finish
   await expect(page).toHaveURL('http://localhost:3000/checkout/thank-you');
-  await expect(page).toHaveTitle('Thank you for your order');
+  await expect(page).toHaveTitle(/Thank you for your order/);
 });

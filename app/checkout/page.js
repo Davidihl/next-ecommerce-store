@@ -1,3 +1,4 @@
+import UpdateMetaData from '../components/UpdateMetadata';
 import { checkCookie } from '../utility/checkCookie';
 import { getCookie } from '../utility/cookie';
 import { getTotalCartValue } from '../utility/getTotalCartValue';
@@ -17,6 +18,10 @@ export default function CheckoutPage() {
 
   return (
     <main className={styles.checkout}>
+      <UpdateMetaData
+        title={metadata.title}
+        description={metadata.description}
+      />
       <h1>Checkout</h1>
       <div className={styles.formWrapper}>
         <div className={styles.form}>

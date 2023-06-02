@@ -1,4 +1,5 @@
 import ProductList from '../components/ProductList';
+import UpdateMetaData from '../components/UpdateMetadata';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -9,6 +10,10 @@ export const metadata = {
 export default function ProductsPage() {
   return (
     <section className={styles.productWrapper}>
+      <UpdateMetaData
+        title={metadata.title}
+        description={metadata.description}
+      />
       <h1>Explore our products</h1>
       {/* @ts-expect-error Async Server Component https://github.com/vercel/next.js/issues/42292 */}
       <ProductList />

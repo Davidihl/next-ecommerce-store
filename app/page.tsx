@@ -3,12 +3,22 @@ import Link from 'next/link';
 import { getProductsByNew } from '../database/products';
 import heroImage from '../public/images/hero_hd.png';
 import ProductList from './components/ProductList';
+import UpdateMetaData from './components/UpdateMetadata';
 import styles from './page.module.scss';
+
+export const metadata = {
+  title: 'Pulse | Redefining Sound Excellence',
+  description: 'Redefining Sound Excellence',
+};
 
 export default function Home() {
   return (
     <>
       <section className={styles.heroSection}>
+        <UpdateMetaData
+          title={metadata.title}
+          description={metadata.description}
+        />
         <div className={styles.heroMessageContainer}>
           <div className={styles.heroMessage}>
             <h1>

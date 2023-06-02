@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
 import ProductImage from '../../components/ProductImage';
+import UpdateMetaData from '../../components/UpdateMetadata';
 import AddToCart from './AddToCart';
 import styles from './page.module.scss';
 
@@ -23,8 +24,18 @@ export async function generateMetadata(props: Props) {
   throw new Error(`Product with id ${props.params.id} not found`);
 }
 
+type MetaData = {
+  title: string | undefined;
+  description: string | undefined;
+};
+
 export default async function ProductPage(props: Props) {
   const product = await getProductById(Number(props.params.id));
+
+  const metadata: MetaData = {
+    title: product?.name,
+    description: product?.description,
+  };
 
   if (!product) {
     notFound();
@@ -32,6 +43,10 @@ export default async function ProductPage(props: Props) {
 
   return (
     <main className={styles.wrapper}>
+      <UpdateMetaData
+        title={metadata.title}
+        description={metadata.description}
+      />
       <h1>{product.name}</h1>
       <div className={styles.productDetail}>
         <ProductImage product={product} />
