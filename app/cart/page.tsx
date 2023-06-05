@@ -21,7 +21,6 @@ export default function CartPage() {
         <div className={styles.quantity}>Quantity</div>
         <div className={styles.total}>Total</div>
       </div>
-      {/* @ts-expect-error Server Component */}
       <Cart allowChange={true} />
       <CheckoutButton />
     </main>
