@@ -13,7 +13,6 @@ export default function ProductImage(props) {
           width={600}
           height={600}
           priority={true}
-          placeholder="blur"
         />
       </div>
     </div>
