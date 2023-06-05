@@ -6,6 +6,8 @@ import ProductList from './components/ProductList';
 import UpdateMetaData from './components/UpdateMetadata';
 import styles from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Pulse | Redefining Sound Excellence',
   description: 'Redefining Sound Excellence',

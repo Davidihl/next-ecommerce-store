@@ -2,7 +2,9 @@ import 'server-only'; // requires pnpm add server-only
 import { config } from 'dotenv-safe';
 import postgres from 'postgres';
 
-config();
+// This loads all environment variables from a .env file
+// for all code after this line
+if (!process.env.FLY_IO) config();
 
 declare module globalThis {
   let postgresSqlClient: ReturnType<typeof postgres> | undefined;

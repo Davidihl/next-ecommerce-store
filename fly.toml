@@ -1,4 +1,4 @@
-app = "next-js-example-spring-2023-vienna-austria"
+app = "daih-next-ecommerce-store"
 primary_region = "otp"
 
 # Apps without volume: Comment out the [mounts] configuration below
