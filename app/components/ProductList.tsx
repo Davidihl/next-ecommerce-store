@@ -12,11 +12,7 @@ function getProducts(filter?: () => any) {
   }
 }
 
-type Props = {
-  filter: () => any;
-};
-
-export default async function ProductList(props: Props) {
+export default async function ProductList(props: any | undefined) {
   const products = await getProducts(props.filter);
 
   return (
