@@ -28,9 +28,13 @@
 
 .name {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
-  min-width: 368px;
+
+  @media screen and (min-width: 415px) {
+    flex-direction: row;
+  }
 }
 
 .city {
