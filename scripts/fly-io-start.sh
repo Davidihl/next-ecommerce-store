@@ -43,6 +43,5 @@ else
     CREATE SCHEMA $PGUSERNAME AUTHORIZATION $PGUSERNAME;
 SQL
 fi
-
 pnpm migrate up
 pnpm start
