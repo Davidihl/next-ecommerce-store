@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
-// import ProductImage from '../../components/ProductImage';
+import ProductImage from '../../components/ProductImage';
 import UpdateMetaData from '../../components/UpdateMetadata';
 import AddToCart from './AddToCart';
 import styles from './page.module.scss';
@@ -50,20 +50,7 @@ export default async function ProductPage(props: Props) {
       />
       <h1>{product.name}</h1>
       <div className={styles.productDetail}>
-        {/* <ProductImage product={product} /> */}
-        <div className={styles.imageWrapper}>
-          <div className={styles.imageContainer}>
-            <Image
-              className={styles.responsiveImage}
-              src={product.image}
-              alt={product.alt}
-              data-test-id="product-image"
-              width={600}
-              height={600}
-              priority={true}
-            />
-          </div>
-        </div>
+        <ProductImage product={product} />
         <div className={styles.description}>
           <h2>Description</h2>
           <p>{product.description}</p>
