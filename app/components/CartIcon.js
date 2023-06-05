@@ -10,7 +10,7 @@ import styles from './CartIcon.module.scss';
 // import Cart from '../cart/Cart';
 // import CheckoutButton from './CheckoutButton';
 
-export default function CartIcon({ repo }) {
+export default function CartIcon() {
   const cartCookie = getCookie('cart'); // Get cookie from client as string
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
   const cartItemAmount = cartAmount(cart);
