@@ -117,3 +117,18 @@ export const getProductsByNew = cache(async () => {
 `;
   return products;
 });
+
+export const updateProductImageById = cache(
+  async (id: number, image: string) => {
+    const [product] = await sql<Product[]>`
+      UPDATE products
+      SET
+        image = ${image},
+      WHERE
+        id = ${id}
+        RETURNING *
+    `;
+
+    return product;
+  },
+);
