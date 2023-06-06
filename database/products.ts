@@ -120,10 +120,22 @@ export const getProductsByNew = cache(async () => {
 
 export const updateProductImageById = cache(
   async (id: number, image: string) => {
-    const [product] = await sql<Product[]>`
+    const [product] = await sql<
+      {
+        id: number;
+        categoryId: number;
+        typeId: number;
+        name: string;
+        price: number;
+        new: boolean;
+        description: string;
+        image: string;
+        alt: string;
+      }[]
+    >`
       UPDATE products
       SET
-        image = ${image},
+        image = ${image}
       WHERE
         id = ${id}
         RETURNING *
