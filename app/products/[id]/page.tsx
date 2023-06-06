@@ -49,7 +49,7 @@ export default async function ProductPage(props: Props) {
       />
       <h1>{product.name}</h1>
       <div className={styles.productDetail}>
-        <ProductImage product={product} />
+        <ProductImage product={product} baseId={props.params.id} />
         <div className={styles.description}>
           <h2>Description</h2>
           <p>{product.description}</p>
