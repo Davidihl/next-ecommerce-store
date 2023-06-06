@@ -4,13 +4,25 @@ import styles from './ProductImage.module.scss';
 
 function shimmer(w, h) {
   return (
-    <svg
-      width="${w}"
-      height="${h}"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    />
+    <svg width={w} height={h}>
+      <defs>
+        <linearGradient id="a">
+          <stop offset="20%" stopColor="#333" />
+          <stop offset="50%" stopColor="#222" />
+          <stop offset="70%" stopColor="#333" />
+        </linearGradient>
+      </defs>
+      <rect width={w} height={h} fill="#333" />
+      <rect id="b" width={w} height={h} fill="url(#a)" />
+      <animate
+        xlinkHref="#b"
+        attributeName="x"
+        dur="1s"
+        from={`-${w}`}
+        repeatCount="indefinite"
+        to={w}
+      />
+    </svg>
   );
 }
 
