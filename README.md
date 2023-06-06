@@ -2,37 +2,56 @@
 
 This project was created as part of the [UpLeveled.io](https://upleveled.io/) bootcamp.
 
+## Disclaimer
+
+At no point, personal or payment service data of the checkout is being stored. The checkout serves as a mockup and would need to be replaced with a proper payment service provider.
+
+# Documentation
+
+## Next.js
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### Getting Started
 
-First, run the development server:
+To initialize the repository, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+```
+
+To start the localhost, run:
+
+```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application should be available on [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Technologies used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This application has been set up using:
 
-## Learn More
+### SCSS
 
-To learn more about Next.js, take a look at the following resources:
+The application has been styled using scss-module with a mobile first approach. As a result, this application is full responsive available on all devices with an optimization on bigger screens like tablets or desktops.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### POSTGRES
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The product database of this application is using to store the product data.
 
-## Deploy on Vercel
+### JEST
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For unit testing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Playwright
+
+For E2E testing
+
+### Github actions
+
+To run unit- and E2E-tests after every push.
+
+### Fly.io
+
+This project has been deployed on [https://daih-next-ecommerce-store.fly.dev/](https://daih-next-ecommerce-store.fly.dev/) and set up in a way, where Github actions are utilized to trigger a deployment after a successfull E2E-test (see Github actions).
