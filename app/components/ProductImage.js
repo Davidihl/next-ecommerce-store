@@ -50,6 +50,7 @@ export default function ProductImage(props) {
           placeholder="blur"
           blurDataURL={getBase64Image(props.baseId)}
           priority={true}
+          unoptimized
         />
       </div>
     </div>
