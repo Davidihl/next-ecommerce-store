@@ -7,7 +7,21 @@ import {
 import { Product } from '../../../../migrations/1684957255-createTableProducts';
 import { Error } from '../route';
 
-type ProductResponseBodyPut = { product: Product } | Error;
+type ProductResponseBodyPut =
+  | {
+      product: {
+        id: number;
+        categoryId: number;
+        typeId: number;
+        name: string;
+        price: number;
+        new: boolean;
+        description: string;
+        image: string;
+        alt: string;
+      };
+    }
+  | Error;
 type ProductResponseBodyGet = { product: Product } | Error;
 
 const productSchema = z.object({
