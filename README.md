@@ -1,5 +1,7 @@
 # E-Commerce Project
 
+This project was created as part of the [UpLeveled.io](https://upleveled.io/) bootcamp.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
