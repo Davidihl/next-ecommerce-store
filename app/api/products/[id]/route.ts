@@ -7,8 +7,6 @@ import {
 import { Product } from '../../../../migrations/1684957255-createTableProducts';
 import { Error } from '../route';
 
-export const dynamic = 'force-dynamic';
-
 type ProductWithoutInnerJoin = {
   id: number;
   categoryId: number;
