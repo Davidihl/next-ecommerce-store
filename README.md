@@ -1,6 +1,6 @@
 # E-Commerce Project
 
-This project was created as part of the [UpLeveled.io](https://upleveled.io/) boot camp.
+This project was created as part of the [UpLeveled.io](https://upleveled.io/) boot camp!
 
 ## Disclaimer
 
