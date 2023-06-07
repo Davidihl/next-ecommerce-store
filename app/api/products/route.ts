@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server';
 import { getAllProducts } from '../../../database/products';
 import { Product } from '../../../migrations/1684957255-createTableProducts';
 
+export const dynamic = 'force-dynamic';
+
 export type Error = {
   error: string;
 };
