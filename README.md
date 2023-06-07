@@ -67,3 +67,5 @@ To run unit- and E2E-tests after every push.
 [https://fly.io/](https://fly.io/)
 
 This project has been deployed on [https://daih-next-ecommerce-store.fly.dev/](https://daih-next-ecommerce-store.fly.dev/) and set up in a way, where Github actions are utilized to trigger a deployment after a successful E2E-test (see Github actions).
+
+### Vercel
