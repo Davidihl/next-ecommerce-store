@@ -79,6 +79,7 @@ export async function PUT(
   }
 
   // zod please verify the body matches my schema
+  // New feature test
   const result = productSchema.safeParse(body);
 
   if (!result.success) {
