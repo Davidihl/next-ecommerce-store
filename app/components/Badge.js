@@ -1,4 +1,3 @@
-'use client';
 import styles from './Badge.module.scss';
 
 export default function Badge({ value }) {
