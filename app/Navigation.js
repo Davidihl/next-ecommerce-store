@@ -8,7 +8,12 @@ export default function Navigation() {
   return (
     <header className={styles.navigation}>
       <Link href="/">
-        <Image src={logo} className={styles.logo} alt="Pulse Logo" />
+        <Image
+          src={logo}
+          className={styles.logo}
+          alt="Pulse Logo"
+          unoptimized
+        />
       </Link>
       <nav className={styles.menu}>
         <Link href="/products" data-test-id="products-link">
