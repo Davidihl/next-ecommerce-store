@@ -18,7 +18,4 @@ export default function UpdateMetaData(props: Props) {
         ?.setAttribute('content', props.description);
     }
   }, [props.title, props.description]);
-
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  return <></>;
 }
