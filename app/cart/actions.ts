@@ -39,3 +39,9 @@ export async function increaseQuantity(id: number) {
 
   await cookies().set('cart', JSON.stringify(cart));
 }
+
+export async function clearCart() {
+  await cookies().set('cart', '', {
+    maxAge: -1,
+  });
+}

@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { clearCart } from '../products/[id]/actions';
 import styles from './CheckoutForm.module.scss';
 
 export default function CheckoutForm() {
@@ -150,8 +151,10 @@ export default function CheckoutForm() {
             formValid ? '' : styles.disabledButton
           }`}
           data-test-id="checkout-confirm-order"
-          formAction={() => {
+          formAction={async () => {
+            await clearCart();
             router.push('/checkout/thank-you');
+            router.refresh();
           }}
         >
           Confirm Order
