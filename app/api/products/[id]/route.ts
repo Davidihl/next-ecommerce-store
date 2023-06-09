@@ -19,19 +19,19 @@ type ProductWithoutInnerJoin = {
   alt: string;
 };
 
-type ProductResponseBodyPut = { product: ProductWithoutInnerJoin } | Error;
+// type ProductResponseBodyPut = { product: ProductWithoutInnerJoin } | Error;
 type ProductResponseBodyGet = { product: Product } | Error;
 
-const productSchema = z.object({
-  // name: z.string(),
-  // price: z.number(),
-  // new: z.boolean(),
-  // description: z.string(),
-  image: z.string(),
-  // alt: z.string(),
-  // category: z.string(),
-  // type: z.string(),
-});
+// const productSchema = z.object({
+// name: z.string(),
+// price: z.number(),
+// new: z.boolean(),
+// description: z.string(),
+// image: z.string(),
+// alt: z.string(),
+// category: z.string(),
+// type: z.string(),
+// });
 
 export async function GET(
   request: NextRequest,
