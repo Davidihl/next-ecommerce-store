@@ -22,8 +22,7 @@
     "secure-json-parse": "^2.7.0",
     "server-only": "^0.0.1",
     "sharp": "^0.32.1",
-    "tsm": "^2.3.0",
-    "zod": "^3.21.4"
+    "tsm": "^2.3.0"
   },
   "devDependencies": {
     "@jest/globals": "^29.5.0",

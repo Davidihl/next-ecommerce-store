@@ -1,23 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
-import {
-  getProductById,
-  updateProductImageById,
-} from '../../../../database/products';
+// import { z } from 'zod'; PNPM ADD ZOD!!!!! Had to remove it because of preflight
+import { getProductById } from '../../../../database/products';
 import { Product } from '../../../../migrations/1684957255-createTableProducts';
 import { Error } from '../route';
 
-type ProductWithoutInnerJoin = {
-  id: number;
-  categoryId: number;
-  typeId: number;
-  name: string;
-  price: number;
-  new: boolean;
-  description: string;
-  image: string;
-  alt: string;
-};
+// import { updateProductImageById } from '../../../../database/products';
+
+// type ProductWithoutInnerJoin = {
+//   id: number;
+//   categoryId: number;
+//   typeId: number;
+//   name: string;
+//   price: number;
+//   new: boolean;
+//   description: string;
+//   image: string;
+//   alt: string;
+// };
 
 // type ProductResponseBodyPut = { product: ProductWithoutInnerJoin } | Error;
 type ProductResponseBodyGet = { product: Product } | Error;
