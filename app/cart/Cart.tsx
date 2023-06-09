@@ -28,17 +28,26 @@ export default async function Cart(props: Props) {
 
   // Get all products from database and transform it for drone
   const allProducts = await getAllProducts();
-  const allProductsWithQuantity: ProductWithQuantity[] = allProducts.map(
-    (product) => {
-      const matchingCookie = cart.find(
-        (item: { id: number; quantity: number }) => item.id === product.id,
-      );
-      const quantity = matchingCookie ? matchingCookie.quantity : 0;
-      return { ...product, quantity };
-    },
-  );
-  const onlyProductsWithQuantity: ProductWithQuantity[] =
-    allProductsWithQuantity.filter((product) => product.quantity > 0);
+  const order = [];
+  for (let i = 0; i < cart.length; i++) {
+    const findProduct = allProducts.find(
+      (product) => product.id === cart[i]['id'],
+    );
+    if (findProduct?.id === cart[i]['id']) {
+      order.push({ ...findProduct, quantity: cart[i]['quantity'] });
+    }
+  }
+  // const allProductsWithQuantity: ProductWithQuantity[] = allProducts.map(
+  //   (product) => {
+  //     const matchingCookie = cart.find(
+  //       (item: { id: number; quantity: number }) => item.id === product.id,
+  //     );
+  //     const quantity = matchingCookie ? matchingCookie.quantity : 0;
+  //     return { ...product, quantity };
+  //   },
+  // );
+  // const onlyProductsWithQuantity: ProductWithQuantity[] =
+  //   allProductsWithQuantity.filter((product) => product.quantity > 0);
 
   // Get all products from database that are in my cart
   // const products = await getProductsInCart(cartIds);
@@ -50,7 +59,7 @@ export default async function Cart(props: Props) {
   // }));
 
   // Transform the array again to store the subtotal in the object
-  const productsWithQuantityAndPrice = onlyProductsWithQuantity.map(
+  const productsWithQuantityAndPrice = order.map(
     (product: ProductWithQuantity) => ({
       ...product,
       subTotal: Number(product.price) * Number(product.quantity),
