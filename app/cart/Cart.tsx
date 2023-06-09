@@ -56,15 +56,11 @@ export default async function Cart(props: Props) {
           />
         ),
       )}
-      {cart.length > 0 ? (
-        <div data-test-id="cart-total" className={styles.totalSumContainer}>
-          <span className={styles.totalSumText}>Total:</span>
-          <span className={styles.totalSumValue}>{totalValue}</span>
-          <span className={styles.totalSumCurrency}>EUR</span>
-        </div>
-      ) : (
-        <div className={styles.noCart}>Your cart is empty</div>
-      )}
+      <div data-test-id="cart-total" className={styles.totalSumContainer}>
+        <span className={styles.totalSumText}>Total:</span>
+        <span className={styles.totalSumValue}>{totalValue}</span>
+        <span className={styles.totalSumCurrency}>EUR</span>
+      </div>
     </>
   );
 }
