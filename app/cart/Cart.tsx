@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
-import { getAllProducts } from '../../database/products'; // import getProductsInCart if fetching from database instead of mapping through all products
+import { getProductsInCart } from '../../database/products';
 import { Product } from '../../migrations/1684957255-createTableProducts';
-// import type { CartItemType } from '../products/[id]/actions';
+import type { CartItemType } from '../products/[id]/actions';
 import { checkCookie } from '../utility/checkCookie';
 import { getCookie } from '../utility/cookie';
 import { getTotalCartValue } from '../utility/getTotalCartValue';
@@ -24,42 +24,19 @@ type Props = {
 export default async function Cart(props: Props) {
   const cartCookie = getCookie('cart'); // Get cookie from client as string
   const cart = checkCookie(cartCookie); // Check cookie and return array of objects
-  // const cartIds = cart.map((cartItem: CartItemType) => cartItem.id);
-
-  // Get all products from database and transform it for drone
-  const allProducts = await getAllProducts();
-  const order = [];
-  for (let i = 0; i < cart.length; i++) {
-    const findProduct = allProducts.find(
-      (product) => product.id === cart[i]['id'],
-    );
-    if (findProduct?.id === cart[i]['id']) {
-      order.push({ ...findProduct, quantity: cart[i]['quantity'] });
-    }
-  }
-  // const allProductsWithQuantity: ProductWithQuantity[] = allProducts.map(
-  //   (product) => {
-  //     const matchingCookie = cart.find(
-  //       (item: { id: number; quantity: number }) => item.id === product.id,
-  //     );
-  //     const quantity = matchingCookie ? matchingCookie.quantity : 0;
-  //     return { ...product, quantity };
-  //   },
-  // );
-  // const onlyProductsWithQuantity: ProductWithQuantity[] =
-  //   allProductsWithQuantity.filter((product) => product.quantity > 0);
+  const cartIds = cart.map((cartItem: CartItemType) => cartItem.id);
 
   // Get all products from database that are in my cart
-  // const products = await getProductsInCart(cartIds);
+  const products = await getProductsInCart(cartIds);
 
   // Transform the array that the product data contain quantity
-  // const productsWithQuantity = products.map((product: Product) => ({
-  //   ...product,
-  //   ...cart.find((cartItem: CartItemType) => cartItem.id === product.id),
-  // }));
+  const productsWithQuantity = products.map((product: Product) => ({
+    ...product,
+    ...cart.find((cartItem: CartItemType) => cartItem.id === product.id),
+  }));
 
   // Transform the array again to store the subtotal in the object
-  const productsWithQuantityAndPrice = order.map(
+  const productsWithQuantityAndPrice = productsWithQuantity.map(
     (product: ProductWithQuantity) => ({
       ...product,
       subTotal: Number(product.price) * Number(product.quantity),
