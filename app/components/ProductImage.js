@@ -12,6 +12,7 @@ export default function ProductImage(props) {
           data-test-id="product-image"
           width={600}
           height={600}
+          unoptimized
         />
       </div>
     </div>

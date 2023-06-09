@@ -29,6 +29,7 @@ export default async function ProductList(props: any | undefined) {
               width="300"
               height="300"
               alt={product.alt}
+              unoptimized
             />
             <h3>{product.name}</h3>
             <p>
