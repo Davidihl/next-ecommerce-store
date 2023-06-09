@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { clearCart } from '../products/[id]/actions';
+import { clearCart } from '../cart/actions';
 import styles from './CheckoutForm.module.scss';
 
 export default function CheckoutForm() {
