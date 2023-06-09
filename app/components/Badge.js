@@ -1,5 +1,4 @@
 'use client';
-import { useEffect, useState } from 'react';
 import styles from './Badge.module.scss';
 
 export default function Badge({ value }) {
