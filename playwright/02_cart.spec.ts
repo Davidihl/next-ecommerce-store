@@ -44,7 +44,14 @@ test('add product / change quantity / remove product from cart test', async ({
 
   // Expect 2 cart items
   await expect(
-    page.locator('main >> [data-test-id^="cart-product-image-"]'),
+    page
+      .locator('[data-test-id^="cart-product-"]')
+      .filter({
+        has: page.locator('[data-test-id^="cart-product-quantity-"]'),
+      })
+      .filter({
+        has: page.locator('[data-test-id^="cart-product-remove-"]'),
+      }),
   ).toHaveCount(2);
 
   // Check for quantities
@@ -94,9 +101,15 @@ test('add product / change quantity / remove product from cart test', async ({
   await page.getByRole('main').getByTestId('cart-product-remove-5').click();
 
   // Expect one remaining cart item
-  // Expect 2 cart items
   await expect(
-    page.locator('main >> [data-test-id^="cart-product-image-"]'),
+    page
+      .locator('[data-test-id^="cart-product-"]')
+      .filter({
+        has: page.locator('[data-test-id^="cart-product-quantity-"]'),
+      })
+      .filter({
+        has: page.locator('[data-test-id^="cart-product-remove-"]'),
+      }),
   ).toHaveCount(1);
 
   // Check total sum
