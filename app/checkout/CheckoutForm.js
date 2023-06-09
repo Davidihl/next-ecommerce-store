@@ -154,6 +154,7 @@ export default function CheckoutForm() {
           formAction={async () => {
             await clearCart();
             router.push('/checkout/thank-you');
+            router.refresh();
           }}
         >
           Confirm Order
