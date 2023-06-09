@@ -56,9 +56,11 @@ export default async function Cart(props: Props) {
           />
         ),
       )}
-      <div data-test-id="cart-total" className={styles.totalSumContainer}>
+      <div className={styles.totalSumContainer}>
         <span className={styles.totalSumText}>Total:</span>
-        <span className={styles.totalSumValue}>{totalValue}</span>
+        <span data-test-id="cart-total" className={styles.totalSumValue}>
+          {totalValue}
+        </span>
         <span className={styles.totalSumCurrency}>EUR</span>
       </div>
     </>
