@@ -47,17 +47,15 @@ export default async function Cart(props: Props) {
 
   return (
     <>
-      {cart.length > 0
-        ? productsWithQuantityAndPrice.map(
-            (product: ProductWithQuantityAndPrice) => (
-              <CartItem
-                key={`cartItem-div-${product.id}`}
-                product={product}
-                allowChange={props.allowChange}
-              />
-            ),
-          )
-        : ''}
+      {productsWithQuantityAndPrice.map(
+        (product: ProductWithQuantityAndPrice) => (
+          <CartItem
+            key={`cartItem-div-${product.id}`}
+            product={product}
+            allowChange={props.allowChange}
+          />
+        ),
+      )}
       {cart.length > 0 ? (
         <div data-test-id="cart-total" className={styles.totalSumContainer}>
           <span className={styles.totalSumText}>Total:</span>
