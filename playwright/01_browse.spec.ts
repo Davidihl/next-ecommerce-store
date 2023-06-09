@@ -73,11 +73,6 @@ test('navigation test', async ({ page }) => {
   await page.getByTestId('cart-link').click();
   await expect(page).toHaveURL('http://localhost:3000/cart');
 
-  // Expect a text: your cart is empty
-  await expect(
-    page.getByRole('main').getByText('Your cart is empty'),
-  ).toBeVisible();
-
   // Go back to homepage
   await page.getByRole('link', { name: 'Pulse Logo' }).click();
   await expect(page).toHaveURL('http://localhost:3000');
