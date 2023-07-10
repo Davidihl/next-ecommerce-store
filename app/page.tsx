@@ -35,7 +35,6 @@ export default function Home() {
           src={heroImage}
           className={styles.heroImage}
           alt="Man wearing Pulse Headphones"
-          priority={true}
         />
       </section>
       <section className={styles.newArrival}>
