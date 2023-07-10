@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProductsByNew } from '../database/products';
-import heroImage from '../public/images/hero_hd.avif';
+import heroImage from '../public/images/hero_hd.png';
 import ProductList from './components/ProductList';
 import UpdateMetaData from './components/UpdateMetadata';
 import styles from './page.module.scss';
