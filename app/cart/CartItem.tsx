@@ -26,6 +26,7 @@ export default function CartItem(props: Props) {
           alt={props.product.alt}
           width="100"
           height="100"
+          unoptimized
         />
         <div className={styles.product}>
           <p className={styles.productName}>{props.product.name}</p>
